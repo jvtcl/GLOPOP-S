@@ -7,6 +7,6 @@ The synthetic population is based on national microdata and scaled to regional s
 - The SCRIPTS folder contains the scripts to generate the database. Depending on which data were available, we created separate scripts. Filename provides details about the data that was available for each country. There are several options: LIS survey + regional statistics (marginals), LIS survey, LIS regional statistics, IPUMS&DHS survey + regional statistics, IPUMS marginals, no data.  To assess the goodness of fit of the synthetic population database, we evaluate how well the synthetic population resembles the observed survey data. 
 - The VALIDATION folder contains all the files necessary to evaluate the performance of our methods in handling missing data (missing micro data and/or missing regional statistics). 
 - The FIGURES folder contains the figures as published in -link to paper-.
-- The IMPORT folder contains an R file and a python file that can be used to read the synthetic population data that is saved in binary format on https://doi.org/10.7910/DVN/KJC3RH  
+- The READ_SYNTHPOP_DATA folder contains an R file and a python file that can be used to read the synthetic population data that is saved in binary format and stored on https://doi.org/10.7910/DVN/KJC3RH  
 
 
