@@ -3,11 +3,7 @@ args = commandArgs(trailingOnly=TRUE)
 
 
 
-liscode = as.character(args[1])
-
-
-liscodeletters <- unlist(strsplit(liscode, ""))
-liscodeletters <- paste0(liscodeletters[1], liscodeletters[2])
+isocode = as.character(args[1])
 
 
 
@@ -23,30 +19,28 @@ library(data.table)
 library(mlfit)
 
 
+countryname_to_iso <- read.csv('Countrynames_to_ISO.csv', sep = ';', header = TRUE)
+
+countryname <- countryname_to_iso[countryname_to_iso$iso_code == isocode,]$country
+
+liscodecountries <- read.csv('LIS_codes_countries2.csv', sep = ';') 
+
+if (countryname %in% liscodecountries$Country){
+  liscodecountries1 <- liscodecountries[liscodecountries$Country == countryname,]
+  liscode <- liscodecountries1$LISCODE
+  liscodeletters <- unlist(strsplit(liscode, ""))
+  liscodeletters <- paste0(liscodeletters[1], liscodeletters[2])
+}
+
+
 
 GDL_pop <- read.csv('GDL_match_population_all_LIS.csv', sep = ';', header = TRUE)
 
 GDL_pop <- na.omit(GDL_pop)
 
-
-
-liscodecountries <- read.csv('LIS_codes_countries2.csv', sep = ';') #dit bestand is zonder spaties. 
-countryname = liscodecountries[liscodecountries$LISCODE == liscode,]$Country
-
-
 GDL_population <- read.csv('GDL_subnational_population_world.csv', head = TRUE, sep = ',')
 GDL_pop2015 <- GDL_population[GDL_population$year == 2015,]
 GDLcountry <- GDL_pop2015[GDL_pop2015$country == countryname,]
-
-
-
-
-
-
-liscode = liscodecountries[liscodecountries$LISCODE == liscode,]$iso_code
-print('liscode isocode')
-print(liscode)
-
 
 
 # FUNCTIONS
@@ -74,12 +68,6 @@ region_names <- function(txtpath){
   characters_inline1test <- characters_inline1test[onlynumbers_inline1test]
   
   characters_inline1test = unlist(lapply(characters_inline1test, function(z){ z[!is.na(z) & z != ""]})) #remove empty strings.
-  
-  #characters_inline1test = gsub('[[:digit:]]+', "", characters_inline1test)
-  #characters_inline1test = gsub(" ", "", characters_inline1test, fixed = TRUE)
-  #gsub("[A-Z]{2,}","",characters_inline1test)
-  #characters_inline1test = unlist(lapply(characters_inline1test, function(z){ z[!is.na(z) & z != ""]}))
-  #characters_inline1test = gsub("([a-z])([A-Z])","\\1 \\2",characters_inline1test)
   
   
   x <- readLines(txtpath)
@@ -2514,16 +2502,10 @@ add_children_characteristics <- function(jointhead_head, children_table, txtpath
   jointhead_head[, Head := 1]
   
   
-  #jointhead_head["Head"] <- 1
-  
-  #jointhead_head <- jointhead_head %>% 
-  #  pivot_longer(c('Head', 'Nr_children'), names_to = "relate_test", values_to = "to_rep")
-  
   jointhead_head = melt(jointhead_head, measure.vars = c('Head', 'Nr_children'), variable.name = 'relate_update', value.name = 'to_rep')
   
   jointhead_head <- as.data.table(lapply(jointhead_head, rep, jointhead_head$to_rep))
   gc()
-  #jointhead_head['relate_update'] <- 0
   
   jointhead_head[, relate_update := as.integer(relate_update)]
   jointhead_head[relate_update == 2, relate_update := 3]
@@ -3122,7 +3104,7 @@ smalltable_endlines_list = list("> dfmerg_hh_relative3 <- dfmerg_hh[dfmerg_hh$nr
 
 
 ##### availability farming 
-txtpath <- paste0(liscode, "_compl_1reg.txt")
+txtpath <- paste0(isocode, "_compl_1reg.txt")
 farm_presence <- farming_available(txtpath)
 print(farm_presence)
 
@@ -3165,13 +3147,8 @@ edu_tib$EDUCAT <- as.integer(edu_tib$EDUCAT)
 
 ##########################################
 
-
-
-DF_errors <- data.frame('Country' = liscode, 'Synth_sq_error' = 0, 'National_sq_error' = 0, 'Marginal_sq_error' = 0)
-
-
 #txtpath <- paste0(liscode, "_complete.txt")
-txtpath <- paste0(liscode, "_compl_1reg.txt")
+txtpath <- paste0(isocode, "_compl_1reg.txt")
 
 regiondf <- region_numbers(txtpath)
 
@@ -3180,19 +3157,8 @@ if (liscodeletters == 'us'){
 }
 
 
-counter_liscode = 1
-
-
-
-print(liscode)
-
-txtpathbegin <- "C:\\Users\\mtn308\\OneDrive - Vrije Universiteit Amsterdam\\Documents\\Paper2\\"
-
-
 
 syn_pop <- data.table()
-nosynth_regions <- c()
-
 
 
 # read names region. 
@@ -3752,7 +3718,7 @@ columnnames <- colnames(jointhead100small)
 #jointhead50 <- jointhead100[HID %in% sampleHH]
 
 
-filenamelisdata <- paste0(liscode, "_LISdata_may23.dat")
+filenamelisdata <- paste0(isocode, "_LISdata_may23.dat")
 
 con = file(filenamelisdata, "wb")
 
@@ -3767,23 +3733,12 @@ close(con)
 
 print('saved LIS data')
 
-filename_length_LIS = paste0('length_LIS_survey_may23', liscode, '.csv')
+filename_length_LIS = paste0('length_LIS_survey_may23', isocode, '.csv')
 
 write.csv(nrow(jointhead100small), filename_length_LIS, row.names = FALSE)
 
 ########################################################################################################
 ################ SYNTHETIC POPULATION #############################
-
-#smaller_sampleHH <- sample(1:max(jointhead100$HID), round(max(jointhead100$HID)/10))
-
-#jointhead10 <- jointhead100[HID %in% smaller_sampleHH]
-
-
-
-countryname = liscodecountries[liscodecountries$iso_code == liscode,]$Country
-
-
-
 
 GDL_pop <- read.csv('GDL_subnational_population_world.csv', head = TRUE, sep = ',')
 
@@ -3893,15 +3848,8 @@ ruralmargSMOD <- ruralmargSMOD %>% rename('Frequency' = 'New_freq')
 
 
 ###################################################
-####### 22 aUG '23: liscode GEOLEV1 fixen als we geen lis landen hebben. 
-####### Dan hoeven we lis niet te matchen. Dus er zijn geen regionumbers, maar GDL codes. 
-
-
-
 
 rural_tib <- as_tibble(ruralmargSMOD)
-#rural_tib <- rural_tib[rural_tib$GEOLEV1 %ni% remove_regions ,]
-
 
 print('ruraltib')
 print(unique(rural_tib$GDLCODE))
@@ -3912,16 +3860,10 @@ regionnumbers <- unique(rural_tib$GDLCODE) #not integers, otherwise we can't mat
 
 jointhead100small[, PID := 1:.N] #was jointhead10. 
 
-nr_individuals_per_regio <- c(-99)
-
-error_region <- c()
-
+nr_individuals_per_regio <- c()
 
 
 ##########################################################
-########## 22-8-23: MAAK CONROL AND REF SAMPLE GELIJK. 
-
-
 # Remove mismatch reference sample (survey) and control sample (marginals)
 #hhsize, hhtype and educat. 
 
@@ -4101,7 +4043,7 @@ print(nrow(syn_pop_country))
 GEOLEV1regions <- unique(rural_tib$GDLCODE)
 
 
-nr_individuals_per_regio = -99
+nr_individuals_per_regio = c()
 
 syn_pop <- data.table()
 
@@ -4155,8 +4097,6 @@ for (regnr in GEOLEV1regions) {
   )
   
   fit <- ml_fit(ml_problem = fitting_problem, algorithm = "ipu", maxiter = 50) #was 50
-  
-  #variation_regions <- append(variation_regions, nrow(fit))
   
   syn_pop_reg <- ml_replicate(fit, algorithm = "trs")
   
@@ -4230,12 +4170,10 @@ print(INCOME_tib)
 
 # for loop with regions. Now with INCOME marginal.  
 nr_individuals_per_regio = c()
-variation_regions = c()
+
 
 syn_pop <- data.table()
 
-
-# rural is individual geworden. 
 
 
 for (regnr in GEOLEV1regions) {
@@ -4301,8 +4239,6 @@ for (regnr in GEOLEV1regions) {
   
   fitweights <- fitweights[fitweights>0]
   
-  variation_regions <- append(variation_regions, length(fitweights))
-  
   syn_pop_reg <- ml_replicate(fit, algorithm = "trs")
   
   popsize_syn <- nrow(syn_pop_reg)
@@ -4352,7 +4288,7 @@ for (regnr in GEOLEV1regions) {
   
   # Save synthetic population
   
-  name = paste0(countryname, '_knownsurvey_LIS_oct23_synthpop_', as.character(regnr), '.dat')
+  name = paste0(isocode, '_knownsurvey_LIS_oct23_synthpop_', as.character(regnr), '.dat')
   
   con = file(name, "wb")
   
@@ -4380,26 +4316,10 @@ for (regnr in GEOLEV1regions) {
 
 
 
-name_individualfile <- paste0('length_knownsurvey_LIS_', countryname, '.csv') 
-DF_nr_individuals_per_region <- data.frame('Country' = rep(countryname, length(GEOLEV1regions)), 'GDLCODE' = GEOLEV1regions, 'Nr_individuals' = nr_individuals_per_regio)
-
-DF_variation_popsizes <- data.frame('Country' = rep(countryname, length(GEOLEV1regions)), 'GDLCODE' = GEOLEV1regions, 'Variation_popsize' = variation_regions)
+name_individualfile <- paste0('length_knownsurvey_LIS_', isocode, '.csv') 
+DF_nr_individuals_per_region <- data.frame('Country' = rep(isocode, length(GEOLEV1regions)), 'GDLCODE' = GEOLEV1regions, 'Nr_individuals' = nr_individuals_per_regio)
 
 write.csv(DF_nr_individuals_per_region, name_individualfile, row.names = FALSE)
 
-
-
-
-#########################################################################
-#########################################################################
-############################### END #####################################
-#########################################################################
-#########################################################################
-############################### END #####################################
-#########################################################################
-#########################################################################
-############################### END #####################################
-#########################################################################
-#########################################################################
 
 
