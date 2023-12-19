@@ -3,11 +3,10 @@ args = commandArgs(trailingOnly=TRUE)
 
 
 
-countryname = as.character(args[1])
+isocode = as.character(args[1])
 
 
 library(dplyr)
-#library(readtext)
 library(stringr)
 library(tidyr)
 library(zoo)
@@ -25,10 +24,18 @@ library(mlfit)
 
 
 
+countryname_to_iso <- read.csv('Countrynames_to_ISO.csv', sep = ';', header = TRUE)
+
+countryname <- countryname_to_iso[countryname_to_iso$iso_code == isocode,]$country
+
 liscodecountries <- read.csv('LIS_codes_countries2.csv', sep = ';') #dit bestand is zonder spaties. 
 
-liscode = 'nolis'
-liscodeletters = 'nolis'
+if (countryname %in% liscodecountries$Country){
+  liscodecountries1 <- liscodecountries[liscodecountries$Country == countryname ,]
+  liscode <- liscodecountries1$LISCODE
+  liscodeletters <- unlist(strsplit(liscode, ""))
+  liscodeletters <- paste0(liscodeletters[1], liscodeletters[2])
+}
 
 
 GDL_population <- read.csv('GDL_subnational_population_world.csv', head = TRUE, sep = ',')
@@ -47,7 +54,7 @@ nosynth_regions <- c()
 
 replace_countries_file <- read.csv('similar_countries_8nov23.csv', sep = ',')
 
-replace_countries_file <- replace_countries_file[replace_countries_file['Country'] == countryname ,]
+replace_countries_file <- replace_countries_file[replace_countries_file['iso_code'] == isocode,]
 
 replace1 <- replace_countries_file$Replace1 
 replace2 <- replace_countries_file$Replace2
@@ -63,22 +70,19 @@ replace_lisdhs <- c(replace_lisdhs1, replace_lisdhs2, replace_lisdhs3)
 print(replacecountries)
 print(replace_lisdhs)
 
-#replacecountries <- c('Armenia', 'Austria', 'Denmark')
-#replace_lisdhs <- c('DHS', 'LIS', 'LIS')
-
-
 jointhead100small = data.frame()
 maxhid = 0
 
 dhscountries <- read.csv('DHScountries_july23.csv', sep = ';')
+
 
 countryname_to_iso <- read.csv('Countrynames_to_ISO.csv', sep = ';', header = TRUE)
 
 
 for (repl in c(1,2,3)){
   
-  replacecountry <- replacecountries[repl]
-  print(replacecountry) 
+  replacecode <- replacecountries[repl]
+  print(replacecode) 
   
   #if (liscode != 'nolis'){
   #  replacecode = liscode
@@ -86,10 +90,6 @@ for (repl in c(1,2,3)){
   
   
   if (replace_lisdhs[repl] == "LIS"){
-    print(liscodecountries[liscodecountries['Country'] == replacecountry ,])
-    replacecode <- liscodecountries[liscodecountries['Country'] == replacecountry ,]$iso_code
-    print(replacecode)
-    #read the file with agents. Loop through the region number.
     filename_length <- paste0('length_LIS_survey_may23', replacecode, '.csv')
     print(filename_length)
     rowlength_LIS <- read.csv(filename_length, sep = ',', header = TRUE)
@@ -128,26 +128,11 @@ for (repl in c(1,2,3)){
     
     
     
-    # LIS farming available: 
-    # Brazil, Dominican Republic, Georgia, Guatemala, Hungary, India, Italy, Mexico, Poland, Russia, Serbia, South Africa, Vietnam. 
-    
-    
-    
-    
     
     
   } else if(replace_lisdhs[repl] == "DHS"){
     
-    # Hier tzt even naar kijken. Namen kolommen hetzelfde maken. 
-    # 15 sept 2023. check LIS farming. 
-    # DHS met farming!!
-    
-    replacecountryname = replacecountries[repl]
-    
-    replace_iso = countryname_to_iso[countryname_to_iso$country == replacecountryname,]$iso_code
-    
-    
-    filename_length <- paste0('length_DHSdata_', replace_iso, '_sept23.csv')
+    filename_length <- paste0('length_DHSdata_', replacecode, '_sept23.csv')
     
     
     rowlength_DHS <- read.csv(filename_length, sep = ',', header = TRUE)
@@ -155,7 +140,7 @@ for (repl in c(1,2,3)){
     l = rowlength_DHS$length
     w = 11
     
-    filenamelisdata <- paste0(replace_iso, "_DHS_sept23_synth_country.dat")
+    filenamelisdata <- paste0(replacecode, "_DHS_sept23_synth_country.dat")
     
     con = file(filenamelisdata, "rb")
     
@@ -187,6 +172,8 @@ for (repl in c(1,2,3)){
   }
   
 }
+
+
 
 
 #correct weights
@@ -579,7 +566,7 @@ for (regnr in GEOLEV1regions) {
   
   # Save synthetic population
   
-  name = paste0(countryname, '_knownmarg_oct23_synthpop_', as.character(regnr), '.dat')
+  name = paste0(isocode, '_knownmarg_oct23_synthpop_', as.character(regnr), '.dat')
   
   con = file(name, "wb")
   
@@ -605,8 +592,8 @@ for (regnr in GEOLEV1regions) {
 
 
 
-name_individualfile <- paste0('length_knownmarg_', countryname, '.csv') 
-DF_nr_individuals_per_region <- data.frame('Country' = rep(countryname, length(GEOLEV1regions)), 'GDLCODE' = GEOLEV1regions, 'Nr_individuals' = nr_individuals_per_regio)
+name_individualfile <- paste0('length_knownmarg_', isocode, '.csv') 
+DF_nr_individuals_per_region <- data.frame('Country' = rep(isocode, length(GEOLEV1regions)), 'GDLCODE' = GEOLEV1regions, 'Nr_individuals' = nr_individuals_per_regio)
 
 write.csv(DF_nr_individuals_per_region, name_individualfile, row.names = FALSE)
 
