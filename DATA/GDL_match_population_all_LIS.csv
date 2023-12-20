@@ -1,0 +1,629 @@
+Country;liscountry;Continent;iso_code;Level;GDLcode;Region;year2015;region_number_LIS;region_number
+Austria;at;Europe;AUT;National;AUTt;Total;8643;;
+Austria;at;Europe;AUT;Subnat;AUTr101;Burgenland;290;11;11
+Austria;at;Europe;AUT;Subnat;AUTr104;Karnten;559;21;21
+Austria;at;Europe;AUT;Subnat;AUTr102;Niederosterreich;1646;12;12
+Austria;at;Europe;AUT;Subnat;AUTr106;Oberosterreich;1446;31;31
+Austria;at;Europe;AUT;Subnat;AUTr107;Salzburg;542;32;32
+Austria;at;Europe;AUT;Subnat;AUTr105;Steiermark;1227;22;22
+Austria;at;Europe;AUT;Subnat;AUTr108;Tirol;734;33;33
+Austria;at;Europe;AUT;Subnat;AUTr109;Vorarlberg;382;34;34
+Austria;at;Europe;AUT;Subnat;AUTr103;Wien;1817;13;13
+Belgium;be;Europe;BEL;National;BELt;Total;11274;;
+Belgium;be;Europe;BEL;Subnat;BELr101;Bruxelles - Brussel;1193;1;1
+Belgium;be;Europe;BEL;Subnat;BELr102;Prov. Antwerpen;1823;2;2
+Belgium;be;Europe;BEL;Subnat;BELr107;Prov. Brabant Wallon;396;3;3
+Belgium;be;Europe;BEL;Subnat;BELr108;Prov. Hainaut;1340;3;3
+Belgium;be;Europe;BEL;Subnat;BELr109;Prov. Liege;1101;3;3
+Belgium;be;Europe;BEL;Subnat;BELr103;Prov. Limburg;864;2;2
+Belgium;be;Europe;BEL;Subnat;BELr110;Prov. Luxembourg;282;3;3
+Belgium;be;Europe;BEL;Subnat;BELr111;Prov. Namur;491;3;3
+Belgium;be;Europe;BEL;Subnat;BELr104;Prov. Oost-Vlaanderen;1484;2;2
+Belgium;be;Europe;BEL;Subnat;BELr105;Prov. Vlaams-Brabant;1119;2;2
+Belgium;be;Europe;BEL;Subnat;BELr106;Prov. West-Vlaanderen;1183;2;2
+Brazil;br;America;BRA;National;BRAt;Total;204472;;
+Brazil;br;America;BRA;Subnat;BRAr102;Acre;759;12;12
+Brazil;br;America;BRA;Subnat;BRAr114;Alagoas;3239;27;27
+Brazil;br;America;BRA;Subnat;BRAr106;Amapa;673;16;16
+Brazil;br;America;BRA;Subnat;BRAr103;Amazonas;3703;13;13
+Brazil;br;America;BRA;Subnat;BRAr116;Bahia;15035;29;29
+Brazil;br;America;BRA;Subnat;BRAr110;Ceara;9252;23;23
+Brazil;br;America;BRA;Subnat;BRAr127;Distrito Federal;2822;53;53
+Brazil;br;America;BRA;Subnat;BRAr118;Espirito Santo;3740;32;32
+Brazil;br;America;BRA;Subnat;BRAr126;Goias;6341;52;52
+Brazil;br;America;BRA;Subnat;BRAr108;Maranhao;6979;21;21
+Brazil;br;America;BRA;Subnat;BRAr125;Mato Grosso;3192;51;51
+Brazil;br;America;BRA;Subnat;BRAr124;Mato Grosso do Sul;2640;50;50
+Brazil;br;America;BRA;Subnat;BRAr117;Minas Gerais;20830;31;31
+Brazil;br;America;BRA;Subnat;BRAr105;Para;8207;15;15
+Brazil;br;America;BRA;Subnat;BRAr112;Paraiba;4059;25;25
+Brazil;br;America;BRA;Subnat;BRAr121;Parana;11281;41;41
+Brazil;br;America;BRA;Subnat;BRAr113;Pernambuco;9500;26;26
+Brazil;br;America;BRA;Subnat;BRAr109;Piaui;3257;22;22
+Brazil;br;America;BRA;Subnat;BRAr119;Rio de Janeiro;17376;33;33
+Brazil;br;America;BRA;Subnat;BRAr111;Rio Grande do Norte;3366;24;24
+Brazil;br;America;BRA;Subnat;BRAr123;Rio Grande do Sul;11473;43;43
+Brazil;br;America;BRA;Subnat;BRAr101;Rondonia;1658;11;11
+Brazil;br;America;BRA;Subnat;BRAr104;Roraima;489;14;14
+Brazil;br;America;BRA;Subnat;BRAr122;Santa Catarina;6684;42;42
+Brazil;br;America;BRA;Subnat;BRAr120;Sao Paulo;44182;35;35
+Brazil;br;America;BRA;Subnat;BRAr115;Sergipe;2221;28;28
+Brazil;br;America;BRA;Subnat;BRAr107;Tocantins;1513;17;17
+Chile;cl;America;CHL;National;CHLt;Total;17969;;
+Chile;cl;America;CHL;Subnat;CHLr111;Aisen;111;11;11
+Chile;cl;America;CHL;Subnat;CHLr102;Antofagasta;588;2;2
+Chile;cl;America;CHL;Subnat;CHLr109;Arbucania;1013;9;9
+Chile;cl;America;CHL;Subnat;CHLr103;Atacama;302;3;3
+Chile;cl;America;CHL;Subnat;CHLr108;Bio Bio;2216;8;8
+Chile;cl;America;CHL;Subnat;CHLr104;Coquimbo;720;4;4
+Chile;cl;America;CHL;Subnat;CHLr110;Los Lagos (incl Los Rios);1271;10.14;10
+Chile;cl;America;CHL;Subnat;CHLr112;Magallanes and La Antartica Chilena;182;12;12
+Chile;cl;America;CHL;Subnat;CHLr107;Maule;1082;7;7
+Chile;cl;America;CHL;Subnat;CHLr106;OHiggins;929;6;6
+Chile;cl;America;CHL;Subnat;CHLr113;Region Metropolitana;7213;13;13
+Chile;cl;America;CHL;Subnat;CHLr101;Tarapaca (incl Arica and Parinacota);514;1.15;1
+Chile;cl;America;CHL;Subnat;CHLr105;Valparaiso (former Aconcagua);1828;5;5
+China;cn;Asia/Pacific;CHN;National;CHNt;Total;1371220;;
+China;cn;Asia/Pacific;CHN;Subnat;CHNr101;Beijing;21715;10;10
+China;cn;Asia/Pacific;CHN;Subnat;CHNr102;Tianjin;15474;10;10
+China;cn;Asia/Pacific;CHN;Subnat;CHNr103;Hebei;74268;10;10
+China;cn;Asia/Pacific;CHN;Subnat;CHNr104;Shanxi;36649;10;10
+China;cn;Asia/Pacific;CHN;Subnat;CHNr105;Inner Mongolia;25116;10;10
+China;cn;Asia/Pacific;CHN;Subnat;CHNr106;Liaoning;43831;20;20
+China;cn;Asia/Pacific;CHN;Subnat;CHNr107;Jilin;27537;20;20
+China;cn;Asia/Pacific;CHN;Subnat;CHNr108;Heilongjiang;38129;20;20
+China;cn;Asia/Pacific;CHN;Subnat;CHNr109;Shanghai;24156;30;30
+China;cn;Asia/Pacific;CHN;Subnat;CHNr110;Jiangsu;79780;30;30
+China;cn;Asia/Pacific;CHN;Subnat;CHNr111;Zhejiang;55404;30;30
+China;cn;Asia/Pacific;CHN;Subnat;CHNr112;Anhui;61455;30;30
+China;cn;Asia/Pacific;CHN;Subnat;CHNr113;Fujian;38400;30;30
+China;cn;Asia/Pacific;CHN;Subnat;CHNr114;Jiangxi;45671;30;30
+China;cn;Asia/Pacific;CHN;Subnat;CHNr115;Shandong;98494;30;30
+China;cn;Asia/Pacific;CHN;Subnat;CHNr116;Henan;94824;40;40
+China;cn;Asia/Pacific;CHN;Subnat;CHNr117;Hubei;58535;40;40
+China;cn;Asia/Pacific;CHN;Subnat;CHNr118;Hunan;67847;40;40
+China;cn;Asia/Pacific;CHN;Subnat;CHNr119;Guangdong;108517;40;40
+China;cn;Asia/Pacific;CHN;Subnat;CHNr120;Guangxi;47972;40;40
+China;cn;Asia/Pacific;CHN;Subnat;CHNr121;Hainan;9112;40;40
+China;cn;Asia/Pacific;CHN;Subnat;CHNr122;Chongqing;30177;50;50
+China;cn;Asia/Pacific;CHN;Subnat;CHNr123;Sichuan;82060;50;50
+China;cn;Asia/Pacific;CHN;Subnat;CHNr124;Guizhou;35309;50;50
+China;cn;Asia/Pacific;CHN;Subnat;CHNr125;Yunnan;47432;50;50
+China;cn;Asia/Pacific;CHN;Subnat;CHNr126;Tibet;3241;50;50
+China;cn;Asia/Pacific;CHN;Subnat;CHNr127;Shaanxi;37939;60;60
+China;cn;Asia/Pacific;CHN;Subnat;CHNr128;Gansu;26006;60;60
+China;cn;Asia/Pacific;CHN;Subnat;CHNr129;Qinghai;5881;60;60
+China;cn;Asia/Pacific;CHN;Subnat;CHNr130;Ningxia;6682;60;60
+China;cn;Asia/Pacific;CHN;Subnat;CHNr131;Xinjiang;23606;60;60
+China;cn;Asia/Pacific;CHN;Subnat;CHNr132;Hong Kong;7291;40;40
+Colombia;co;America;COL;National;COLt;Total;47521;;
+Colombia;co;America;COL;Subnat;COLr129;Amazonas;75.1;;
+Colombia;co;America;COL;Subnat;COLr101;Antioquia (incl Medellin);6376;305;305
+Colombia;co;America;COL;Subnat;COLr125;Arauca;259;;
+Colombia;co;America;COL;Subnat;COLr102;Atlantico (incl Barranquilla);2430;108;108
+Colombia;co;America;COL;Subnat;COLr103;Bogota D.C.;7781;215;215
+Colombia;co;America;COL;Subnat;COLr104;Bolivar (Sur and Norte);2071;113;113
+Colombia;co;America;COL;Subnat;COLr105;Boyaca;1261;215;215
+Colombia;co;America;COL;Subnat;COLr106;Caldas;976;317;317
+Colombia;co;America;COL;Subnat;COLr107;Caqueta;472;318;318
+Colombia;co;America;COL;Subnat;COLr126;Casanare;352;;
+Colombia;co;America;COL;Subnat;COLr108;Cauca;1362;419;419
+Colombia;co;America;COL;Subnat;COLr109;Cesar;1016;120;120
+Colombia;co;America;COL;Subnat;COLr112;Choco;494;427;427
+Colombia;co;America;COL;Subnat;COLr110;Cordoba;1688;123;123
+Colombia;co;America;COL;Subnat;COLr111;Cundinamarca;2647;225;225
+Colombia;co;America;COL;Subnat;COLr130;Guainja;40.9;;
+Colombia;co;America;COL;Subnat;COLr114;Guajira;946;144;144
+Colombia;co;America;COL;Subnat;COLr131;Guaviare;64.2;;
+Colombia;co;America;COL;Subnat;COLr113;Huila;1140;341;341
+Colombia;co;America;COL;Subnat;COLr115;Magdalena;1245;147;147
+Colombia;co;America;COL;Subnat;COLr116;Meta;949;250;250
+Colombia;co;America;COL;Subnat;COLr117;Narino;1723;452;452
+Colombia;co;America;COL;Subnat;COLr118;Norte de Santander;1339;254;254
+Colombia;co;America;COL;Subnat;COLr127;Putumayo;341;;
+Colombia;co;America;COL;Subnat;COLr119;Quindio;558;363;363
+Colombia;co;America;COL;Subnat;COLr120;Risaralda;940;366;366
+Colombia;co;America;COL;Subnat;COLr128;San Andres;75.6;;
+Colombia;co;America;COL;Subnat;COLr121;Santander;2035;268;268
+Colombia;co;America;COL;Subnat;COLr122;Sucre;841;170;170
+Colombia;co;America;COL;Subnat;COLr123;Tolima;1391;373;373
+Colombia;co;America;COL;Subnat;COLr124;Valle (incl Cali);4557;476;476
+Colombia;co;America;COL;Subnat;COLr132;Vaupis;43.2;;
+Colombia;co;America;COL;Subnat;COLr133;Vichada;30.9;;
+CzechRepublic;cz;Europe;CZE;National;CZEt;Total;10546;;
+CzechRepublic;cz;Europe;CZE;Subnat;CZEr106;Jihovychod;1683;61.62;61
+CzechRepublic;cz;Europe;CZE;Subnat;CZEr103;Jihozapad;1213;31.32;31
+CzechRepublic;cz;Europe;CZE;Subnat;CZEr108;Moravskoslezsko;1215;81;81
+CzechRepublic;cz;Europe;CZE;Subnat;CZEr101;Praha;1263;11;11
+CzechRepublic;cz;Europe;CZE;Subnat;CZEr105;Severovychod;1507;51.52.53;51
+CzechRepublic;cz;Europe;CZE;Subnat;CZEr104;Severozapad;1122;41.42;41
+CzechRepublic;cz;Europe;CZE;Subnat;CZEr102;Stredni Cechy;1321;21;21
+CzechRepublic;cz;Europe;CZE;Subnat;CZEr107;Stredni Morava;1220;71.72;71
+Denmark;dk;Europe;DNK;National;DNKt;Total;5683;;
+Denmark;dk;Europe;DNK;Subnat;DNKr101;Hovedstaden;1778;1.2.3.4;1
+Denmark;dk;Europe;DNK;Subnat;DNKr104;Midtjylland;1288;5.6;5
+Denmark;dk;Europe;DNK;Subnat;DNKr105;Nordjylland;584;11;11
+Denmark;dk;Europe;DNK;Subnat;DNKr102;Sjaelland;824;10.9;9
+Denmark;dk;Europe;DNK;Subnat;DNKr103;Syddanmark;1209;7.8;7
+DominicanRepublic;do;America;DOM;National;DOMt;Total;10282;;
+DominicanRepublic;do;America;DOM;Subnat;DOMr101;Region 0 (Distrito Nacional, Santo Domingo, Monte Plata);3914;1.32.29;1
+DominicanRepublic;do;America;DOM;Subnat;DOMr102;Region I (Peravia, San Cristobal, San Jose de Ocoa, Azua);870;2.17.21.31;2
+DominicanRepublic;do;America;DOM;Subnat;DOMr103;Region II (Espaillat, Puerto Plata, Santiago);1578;9.18.25;9
+DominicanRepublic;do;America;DOM;Subnat;DOMr104;Region III (Duarte, Maria Trinidad Sanchez, Salcedo, Samana);650;6.14.19.20;6
+DominicanRepublic;do;America;DOM;Subnat;DOMr105;Region IV (Independencia, Bahoruco, Barahona, Pedernales);390;3.4.10.16;3
+DominicanRepublic;do;America;DOM;Subnat;DOMr106;Region V (El Seibo, La Altagracia, La Romana, San Pedro de Macoris, Hato Mayor);1060;8.11.12.23.30;8
+DominicanRepublic;do;America;DOM;Subnat;DOMr107;Region VI (San Juan, Elias Pina);568;7.22;7
+DominicanRepublic;do;America;DOM;Subnat;DOMr108;Region VII (Dajabon, Monte Cristi, Santiago Rodriguez, Valverde);501;5.15.26.27;5
+DominicanRepublic;do;America;DOM;Subnat;DOMr109;Region VIII (La Vega, Monsenor Nouel, Sanchez Ramirez);751;13.24.28;13
+Egypt;eg;Africa;EGY;National;EGYt;Total;92443;;
+Egypt;eg;Africa;EGY;Subnat;EGYr102;Alexandria;4111;;
+Egypt;eg;Africa;EGY;Subnat;EGYr118;Assuit;5020;;
+Egypt;eg;Africa;EGY;Subnat;EGYr121;Aswan;1652;;
+Egypt;eg;Africa;EGY;Subnat;EGYr112;Behera;7813;;
+Egypt;eg;Africa;EGY;Subnat;EGYr115;Beni Suef;3150;;
+Egypt;eg;Africa;EGY;Subnat;EGYr101;Cairo;8410;;
+Egypt;eg;Africa;EGY;Subnat;EGYr106;Dakahlia;6737;;
+Egypt;eg;Africa;EGY;Subnat;EGYr105;Damietta;1629;;
+Egypt;eg;Africa;EGY;Subnat;EGYr116;Fayoum;3038;;
+Egypt;eg;Africa;EGY;Subnat;EGYr122;Frontier governorates (Red Sea, New Valley, Matroh, North Sainai, South Sainai);812;;
+Egypt;eg;Africa;EGY;Subnat;EGYr110;Gharbia;5753;;
+Egypt;eg;Africa;EGY;Subnat;EGYr114;Giza;8798;;
+Egypt;eg;Africa;EGY;Subnat;EGYr113;Ismailia;714;;
+Egypt;eg;Africa;EGY;Subnat;EGYr109;Kafr El-Sheikh;3642;;
+Egypt;eg;Africa;EGY;Subnat;EGYr108;Kalyubia;4313;;
+Egypt;eg;Africa;EGY;Subnat;EGYr111;Menoufia;4339;;
+Egypt;eg;Africa;EGY;Subnat;EGYr117;Menya;5111;;
+Egypt;eg;Africa;EGY;Subnat;EGYr103;Port Said;380;;
+Egypt;eg;Africa;EGY;Subnat;EGYr120;Qena;4217;;
+Egypt;eg;Africa;EGY;Subnat;EGYr107;Sharkia;8053;;
+Egypt;eg;Africa;EGY;Subnat;EGYr119;Souhag;4670;;
+Egypt;eg;Africa;EGY;Subnat;EGYr104;Suez;80.4;;
+Estonia;ee;Europe;EST;National;ESTt;Total;1315;;
+Estonia;ee;Europe;EST;Subnat;ESTr103;Kesk-Eesti;148;51.59.70;51
+Estonia;ee;Europe;EST;Subnat;ESTr104;Kirde-Eesti;147;44;44
+Estonia;ee;Europe;EST;Subnat;ESTr102;Laane-Eesti;124;39.57.67.74;39
+Estonia;ee;Europe;EST;Subnat;ESTr105;Louna-Eesti;320;49.84.65.78.82.86;49
+Estonia;ee;Europe;EST;Subnat;ESTr101;Pohja-Eesti;577;1.37;1
+Finland;fi;Europe;FIN;National;FINt;Total;5480;;
+Finland;fi;Europe;FIN;Subnat;FINr105;Aland;29;21;21
+Finland;fi;Europe;FIN;Subnat;FINr103;Etela-Suomi;1161;2.5.7.8.9;2
+Finland;fi;Europe;FIN;Subnat;FINr102;Helsinki-Uusimaa;1612;1;1
+Finland;fi;Europe;FIN;Subnat;FINr101;Lansi-Suomi;1378;15.14.6.4.13;4
+Finland;fi;Europe;FIN;Subnat;FINr104;Pohjois-ja Ita-Suomi;1299;19.17.18.12.11.10.16.;10
+France;fr;Europe;FRA;National;FRAt;Total;66548;;
+France;fr;Europe;FRA;Subnat;FRAr110;Alsace;1882;42;42
+France;fr;Europe;FRA;Subnat;FRAr115;Aquitaine;3382;72;72
+France;fr;Europe;FRA;Subnat;FRAr119;Auvergne;1363;83;83
+France;fr;Europe;FRA;Subnat;FRAr106;Basse-Normandie;1478;25;25
+France;fr;Europe;FRA;Subnat;FRAr107;Bourgogne;1640;26;26
+France;fr;Europe;FRA;Subnat;FRAr113;Bretagne;3300;53;53
+France;fr;Europe;FRA;Subnat;FRAr105;Centre;2578;24;24
+France;fr;Europe;FRA;Subnat;FRAr102;Champagne-Ardenne;1336;21;21
+France;fr;Europe;FRA;Subnat;FRAr122;Corse;329;94;94
+France;fr;Europe;FRA;Subnat;FRAr111;Franche-Comte;1180;43;43
+France;fr;Europe;FRA;Subnat;FRAr127;French Guyana;265;;
+France;fr;Europe;FRA;Subnat;FRAr125;Guadeloupe;432;;
+France;fr;Europe;FRA;Subnat;FRAr104;Haute-Normandie;1859;23;23
+France;fr;Europe;FRA;Subnat;FRAr101;Ile de France;12100;11;11
+France;fr;Europe;FRA;Subnat;FRAr120;Languedoc-Roussillon;2783;91;91
+France;fr;Europe;FRA;Subnat;FRAr117;Limousin;737;74;74
+France;fr;Europe;FRA;Subnat;FRAr109;Lorraine;2340;41;41
+France;fr;Europe;FRA;Subnat;FRAr126;Martinique;379;;
+France;fr;Europe;FRA;Subnat;FRAr129;Mayotte;237;;
+France;fr;Europe;FRA;Subnat;FRAr116;Midi-Pyrenees;3008;73;73
+France;fr;Europe;FRA;Subnat;FRAr108;Nord;4076;31;31
+France;fr;Europe;FRA;Subnat;FRAr112;Pays de la Loire;3728;52;52
+France;fr;Europe;FRA;Subnat;FRAr103;Picardie;1932;22;22
+France;fr;Europe;FRA;Subnat;FRAr114;Poitou-Charentes;1805;54;54
+France;fr;Europe;FRA;Subnat;FRAr121;Provence-Alpes-Cote dAzur;5015;93;93
+France;fr;Europe;FRA;Subnat;FRAr128;Reunion;852;;
+France;fr;Europe;FRA;Subnat;FRAr118;Rhone-Alpes;6534;82;82
+Georgia;ge;Europe;GEO;National;GEOt;Total;3725;;
+Georgia;ge;Europe;GEO;Subnat;GEOr102;Ajaria;362;8;8
+Georgia;ge;Europe;GEO;Subnat;GEOr103;Guria;108;9;9
+Georgia;ge;Europe;GEO;Subnat;GEOr104;Imereti Racha-Lochkhumi Kvemo Svaneti;547;11;11
+Georgia;ge;Europe;GEO;Subnat;GEOr105;Kakheti;284;1;1
+Georgia;ge;Europe;GEO;Subnat;GEOr106;Kvemo Kartli;420;4;4
+Georgia;ge;Europe;GEO;Subnat;GEOr107;Mtskheta-Mtianeti;94;12;12
+Georgia;ge;Europe;GEO;Subnat;GEOr108;Samegrelo-Zemo Svateni;318;10;10
+Georgia;ge;Europe;GEO;Subnat;GEOr109;Samtskhe-Javakheti;150;6;6
+Georgia;ge;Europe;GEO;Subnat;GEOr110;Shida Kartli;262;3;3
+Georgia;ge;Europe;GEO;Subnat;GEOr111;Tbilisi;1180;2;2
+Germany;de;Europe;DEU;National;DEUt;Total;81687;;
+Germany;de;Europe;DEU;Subnat;DEUr101;Baden-Wurttemberg;10798;1;1
+Germany;de;Europe;DEU;Subnat;DEUr102;Bayern;12768;2;2
+Germany;de;Europe;DEU;Subnat;DEUr103;Berlin;3495;3;3
+Germany;de;Europe;DEU;Subnat;DEUr104;Brandenburg;2471;4;4
+Germany;de;Europe;DEU;Subnat;DEUr105;Bremen;667;5;5
+Germany;de;Europe;DEU;Subnat;DEUr106;Hamburg;1775;6;6
+Germany;de;Europe;DEU;Subnat;DEUr107;Hessen;6135;7;7
+Germany;de;Europe;DEU;Subnat;DEUr108;Mecklenburg-Vorpommern;1606;8;8
+Germany;de;Europe;DEU;Subnat;DEUr109;Niedersachsen;7877;9;9
+Germany;de;Europe;DEU;Subnat;DEUr110;Nordrhein-Westfalen;17752;10;10
+Germany;de;Europe;DEU;Subnat;DEUr111;Rheinland-Pfalz;4032;11;11
+Germany;de;Europe;DEU;Subnat;DEUr112;Saarland;992;12;12
+Germany;de;Europe;DEU;Subnat;DEUr113;Sachsen;4070;13;13
+Germany;de;Europe;DEU;Subnat;DEUr114;Sachsen-Anhalt;2241;14;14
+Germany;de;Europe;DEU;Subnat;DEUr115;Schleswig-Holstein;2845;15;15
+Germany;de;Europe;DEU;Subnat;DEUr116;Thuringen;2164;16;16
+Greece;gr;Europe;GRC;National;GRCt;Total;10821;;
+Greece;gr;Europe;GRC;Subnat;GRCr105;Anatoliki Makedonia, Thraki;606;5;5
+Greece;gr;Europe;GRC;Subnat;GRCr101;Attiki;3802;3;3
+Greece;gr;Europe;GRC;Subnat;GRCr111;Dytiki Ellada;671;6;6
+Greece;gr;Europe;GRC;Subnat;GRCr107;Dytiki Makedonia;275;5;5
+Greece;gr;Europe;GRC;Subnat;GRCr110;Ionia Nisia;207;6;6
+Greece;gr;Europe;GRC;Subnat;GRCr108;Ipeiros;338;5;5
+Greece;gr;Europe;GRC;Subnat;GRCr106;Kentriki Makedonia;1889;5;5
+Greece;gr;Europe;GRC;Subnat;GRCr104;Kriti;632;4;4
+Greece;gr;Europe;GRC;Subnat;GRCr103;Notio Aigaio;335;4;4
+Greece;gr;Europe;GRC;Subnat;GRCr113;Peloponnisos;582;6;6
+Greece;gr;Europe;GRC;Subnat;GRCr112;Sterea Ellada;557;6;6
+Greece;gr;Europe;GRC;Subnat;GRCr109;Thessalia;732;6;6
+Greece;gr;Europe;GRC;Subnat;GRCr102;Voreio Aigaio;197;4;4
+Guatemala;gt;America;GTM;National;GTMt;Total;15567;;
+Guatemala;gt;America;GTM;Subnat;GTMr105;Central;1695;3.4.5;3
+Guatemala;gt;America;GTM;Subnat;GTMr101;Metropolitan;3065;1;1
+Guatemala;gt;America;GTM;Subnat;GTMr102;North;1450;15.16;15
+Guatemala;gt;America;GTM;Subnat;GTMr107;North-Occidental;2214;13.14;13
+Guatemala;gt;America;GTM;Subnat;GTMr103;North-Oriental;1370;2.18.19.20;2
+Guatemala;gt;America;GTM;Subnat;GTMr108;Peten;595;17;17
+Guatemala;gt;America;GTM;Subnat;GTMr106;South-Occidental;3816;7.8.9.10.11.12;7
+Guatemala;gt;America;GTM;Subnat;GTMr104;South-Oriental;1362;6.21.22;6
+Hungary;hu;Europe;HUN;National;HUNt;Total;9843;;
+Hungary;hu;Europe;HUN;Subnat;HUNr107;Del-Alfold;1267;331.332.333;331
+Hungary;hu;Europe;HUN;Subnat;HUNr104;Del-Dunantul;905;233.232.231;231
+Hungary;hu;Europe;HUN;Subnat;HUNr106;Eszak-Alfold;1477;321.322.323;321
+Hungary;hu;Europe;HUN;Subnat;HUNr105;Eszak-Magyarorszag;1159;311.312.313;311
+Hungary;hu;Europe;HUN;Subnat;HUNr102;Kozep-Dunantul;1062;211.212.213;211
+Hungary;hu;Europe;HUN;Subnat;HUNr101;Kozep-Magyarorszag;2989;102.101;101
+Hungary;hu;Europe;HUN;Subnat;HUNr103;Nyugat-Dunantul;984;221.222.223;221
+India;in;Asia/Pacific;IND;National;INDt;Total;1310152;;
+India;in;Asia/Pacific;IND;Subnat;INDr136;Andaman and Nicobar Islands;384;;
+India;in;Asia/Pacific;IND;Subnat;INDr101;Andhra Pradesh;63609;28;28
+India;in;Asia/Pacific;IND;Subnat;INDr125;Arunachal Pradesh;1196;12;12
+India;in;Asia/Pacific;IND;Subnat;INDr102;Assam;31612;18;18
+India;in;Asia/Pacific;IND;Subnat;INDr103;Bihar;110148;10;10
+India;in;Asia/Pacific;IND;Subnat;INDr131;Chandigarth;791;4;4
+India;in;Asia/Pacific;IND;Subnat;INDr129;Chhattisgarh;31615;22;22
+India;in;Asia/Pacific;IND;Subnat;INDr132;Dadra and Nagar Haveli;514;26;26
+India;in;Asia/Pacific;IND;Subnat;INDr134;Daman and Diu;185;25;25
+India;in;Asia/Pacific;IND;Subnat;INDr104;Goa;2071;30;30
+India;in;Asia/Pacific;IND;Subnat;INDr105;Gujarat;62990;24;24
+India;in;Asia/Pacific;IND;Subnat;INDr106;Haryana;28488;6;6
+India;in;Asia/Pacific;IND;Subnat;INDr107;Himachal Pradesh;7130;2;2
+India;in;Asia/Pacific;IND;Subnat;INDr108;Jammu and Kashmir;13236;1;1
+India;in;Asia/Pacific;IND;Subnat;INDr128;Jharkhand;39033;20;20
+India;in;Asia/Pacific;IND;Subnat;INDr109;Karnataka;64769;29;29
+India;in;Asia/Pacific;IND;Subnat;INDr110;Kerala;37162;32;32
+India;in;Asia/Pacific;IND;Subnat;INDr135;Lakshadweep;80;32;32
+India;in;Asia/Pacific;IND;Subnat;INDr111;Madhya Pradesh;80928;23;23
+India;in;Asia/Pacific;IND;Subnat;INDr112;Maharashtra;125123;27;27
+India;in;Asia/Pacific;IND;Subnat;INDr113;Manipur;2423;14;14
+India;in;Asia/Pacific;IND;Subnat;INDr114;Meghalaya;3054;17;17
+India;in;Asia/Pacific;IND;Subnat;INDr115;Mizoram;1113;15;15
+India;in;Asia/Pacific;IND;Subnat;INDr116;Nagaland;1694;13;13
+India;in;Asia/Pacific;IND;Subnat;INDr124;New Delhi;19849;7;7
+India;in;Asia/Pacific;IND;Subnat;INDr117;Orissa;44845;21;21
+India;in;Asia/Pacific;IND;Subnat;INDr133;Puducherry;1431;34;34
+India;in;Asia/Pacific;IND;Subnat;INDr118;Punjab;28876;3;3
+India;in;Asia/Pacific;IND;Subnat;INDr119;Rajasthan;72437;8;8
+India;in;Asia/Pacific;IND;Subnat;INDr120;Sikkim;562;11;11
+India;in;Asia/Pacific;IND;Subnat;INDr121;Tamil Nadu;82031;33;33
+India;in;Asia/Pacific;IND;Subnat;INDr130;Telangana;40487;28;28
+India;in;Asia/Pacific;IND;Subnat;INDr126;Tripura;3804;16;16
+India;in;Asia/Pacific;IND;Subnat;INDr123;Uttar Pradesh;205471;9;9
+India;in;Asia/Pacific;IND;Subnat;INDr127;Uttaranchal;13072;5;5
+India;in;Asia/Pacific;IND;Subnat;INDr122;West Bengal;98211;19;19
+Ireland;ie;Europe;IRL;National;IRLt;Total;4702;;
+Ireland;ie;Europe;IRL;Subnat;IRLr101;Border;412;4;4
+Ireland;ie;Europe;IRL;Subnat;IRLr104;Dublin;1325;6;6
+Ireland;ie;Europe;IRL;Subnat;IRLr105;Mid-East;659;6;6
+Ireland;ie;Europe;IRL;Subnat;IRLr106;Mid-West;455;5;5
+Ireland;ie;Europe;IRL;Subnat;IRLr102;Midland;289;6;6
+Ireland;ie;Europe;IRL;Subnat;IRLr107;South-East;432;5;5
+Ireland;ie;Europe;IRL;Subnat;IRLr108;South-West;682;5;5
+Ireland;ie;Europe;IRL;Subnat;IRLr103;West;448;4;4
+Israel;il;Asia/Pacific;ISR;National;ISRt;Total;8380;1;1
+Italy;it;Europe;ITA;National;ITAt;Total;60731;;
+Italy;it;Europe;ITA;Subnat;ITAr105;Abruzzo;1329;13;13
+Italy;it;Europe;ITA;Subnat;ITAr109;Basilicata;575;17;17
+Italy;it;Europe;ITA;Subnat;ITAr110;Calabria;1974;18;18
+Italy;it;Europe;ITA;Subnat;ITAr107;Campania;5856;15;15
+Italy;it;Europe;ITA;Subnat;ITAr117;Emilia-Romagna;4449;8;8
+Italy;it;Europe;ITA;Subnat;ITAr116;Friuli-Venezia Giulia;1224;6;6
+Italy;it;Europe;ITA;Subnat;ITAr121;Lazio;5890;12;12
+Italy;it;Europe;ITA;Subnat;ITAr103;Liguria;1577;7;7
+Italy;it;Europe;ITA;Subnat;ITAr104;Lombardia;10005;3;3
+Italy;it;Europe;ITA;Subnat;ITAr120;Marche;1547;11;11
+Italy;it;Europe;ITA;Subnat;ITAr106;Molise;313;14;14
+Italy;it;Europe;ITA;Subnat;ITAr101;Piemonte;4414;1;1
+Italy;it;Europe;ITA;Subnat;ITAr113;Provincia Autonoma di Bolzano;520;4;4
+Italy;it;Europe;ITA;Subnat;ITAr114;Provincia Autonoma di Trento;538;4;4
+Italy;it;Europe;ITA;Subnat;ITAr108;Puglia;4084;16;16
+Italy;it;Europe;ITA;Subnat;ITAr112;Sardegna;1661;20;20
+Italy;it;Europe;ITA;Subnat;ITAr111;Sicilia;5083;19;19
+Italy;it;Europe;ITA;Subnat;ITAr118;Toscana;3748;9;9
+Italy;it;Europe;ITA;Subnat;ITAr119;Umbria;893;10;10
+Italy;it;Europe;ITA;Subnat;ITAr102;Valle dAosta;128;2;2
+Italy;it;Europe;ITA;Subnat;ITAr115;Veneto;4921;5;5
+IvoryCoast;ci;Africa;CIV;National;CIVt;Total;23226;;
+IvoryCoast;ci;Africa;CIV;Subnat;CIVr101;Centre;1682;;
+IvoryCoast;ci;Africa;CIV;Subnat;CIVr102;Centre Est;582;;
+IvoryCoast;ci;Africa;CIV;Subnat;CIVr103;Centre Nord;1866;;
+IvoryCoast;ci;Africa;CIV;Subnat;CIVr104;Centre Ouest;3468;;
+IvoryCoast;ci;Africa;CIV;Subnat;CIVr105;Nord;1236;;
+IvoryCoast;ci;Africa;CIV;Subnat;CIVr106;Nord Est;998;;
+IvoryCoast;ci;Africa;CIV;Subnat;CIVr107;Nord Ouest;1078;;
+IvoryCoast;ci;Africa;CIV;Subnat;CIVr108;Ouest;2729;;
+IvoryCoast;ci;Africa;CIV;Subnat;CIVr110;Sud Ouest;1903;;
+IvoryCoast;ci;Africa;CIV;Subnat;CIVr109;Sud, Abidjan;7683;;
+Japan;jp;Asia/Pacific;JPN;Subnat;JPNr108;Chugoku (Tottori, Shimane, Okayama, Hiroshima, Yamaguchi);7441;6;6
+Japan;jp;Asia/Pacific;JPN;Subnat;JPNr101;Hokkaido;5384;1;1
+Japan;jp;Asia/Pacific;JPN;Subnat;JPNr105;Hokuriku (Niigata, Toyama, Ishikawa, Fukui);5313;4;4
+Japan;jp;Asia/Pacific;JPN;Subnat;JPNr107;Kansai region (Shiga, Kyoto, Osaka, Hyogo, Nara, Wakayama);20733;5;5
+Japan;jp;Asia/Pacific;JPN;Subnat;JPNr110;Kyushu (Fukuoka, Saga, Nagasaki, Kumamoto, Oita, Miyazaki, Kagoshima, Okinawa);14455;8;8
+Japan;jp;Asia/Pacific;JPN;Subnat;JPNr103;Northern-Kanto, Koshin (Ibaraki, Tochigi, Gunma);6867;3;3
+Japan;jp;Asia/Pacific;JPN;Subnat;JPNr109;Shikoku (Tokushima, Kagawa, Ehime, Kochi);3846;7;7
+Japan;jp;Asia/Pacific;JPN;Subnat;JPNr104;Southern-Kanto (Saitama, Chiba, Tokyo, Kanagawa, Yamanashi, Nagano);39079;3;3
+Japan;jp;Asia/Pacific;JPN;Subnat;JPNr102;Tohoku (Aomori, Iwate, Miyagi, Akita, Yamagata, Fukushima);8986;2;2
+Japan;jp;Asia/Pacific;JPN;Subnat;JPNr106;Toukai (Gifu, Shizuoka, Aichi, Mie);15037;4;4
+Lithuania;lt;Europe;LTU;National;LTUt;Total;2905;;
+Lithuania;lt;Europe;LTU;Subnat;LTUr101;Alytus County;147;1;1
+Lithuania;lt;Europe;LTU;Subnat;LTUr102;Kaunas County;582;2;2
+Lithuania;lt;Europe;LTU;Subnat;LTUr103;Klaipeda County;326;3;3
+Lithuania;lt;Europe;LTU;Subnat;LTUr104;Marijampole County;151;4;4
+Lithuania;lt;Europe;LTU;Subnat;LTUr105;Panevezys County;235;5;5
+Lithuania;lt;Europe;LTU;Subnat;LTUr106;Siauliai County;284;6;6
+Lithuania;lt;Europe;LTU;Subnat;LTUr107;Taurage County;103;7;7
+Lithuania;lt;Europe;LTU;Subnat;LTUr108;Telsiai County;143;8;8
+Lithuania;lt;Europe;LTU;Subnat;LTUr109;Utena County;141;9;9
+Lithuania;lt;Europe;LTU;Subnat;LTUr110;Vilnius County;794;10;10
+Luxembourg;lu;Europe;LUX;National;LUXt;Total;570;1;1
+Mexico;mx;America;MEX;National;MEXt;Total;121858;;
+Mexico;mx;America;MEX;Subnat;MEXr101;Aguascalientes;1315;1;1
+Mexico;mx;America;MEX;Subnat;MEXr102;Baja California;3423;2;2
+Mexico;mx;America;MEX;Subnat;MEXr103;Baja California Sur;701;3;3
+Mexico;mx;America;MEX;Subnat;MEXr104;Campeche;905;4;4
+Mexico;mx;America;MEX;Subnat;MEXr107;Chiapas;5314;7;7
+Mexico;mx;America;MEX;Subnat;MEXr108;Chihuahua;3692;8;8
+Mexico;mx;America;MEX;Subnat;MEXr105;Coahuila;2999;5;5
+Mexico;mx;America;MEX;Subnat;MEXr106;Colima;729;6;6
+Mexico;mx;America;MEX;Subnat;MEXr109;Distrito Federal;9104;9;9
+Mexico;mx;America;MEX;Subnat;MEXr110;Durango;1812;10;10
+Mexico;mx;America;MEX;Subnat;MEXr111;Guanajuato;5835;11;11
+Mexico;mx;America;MEX;Subnat;MEXr112;Guerrero;3570;12;12
+Mexico;mx;America;MEX;Subnat;MEXr113;Hidalgo;2892;13;13
+Mexico;mx;America;MEX;Subnat;MEXr114;Jalisco;8039;14;14
+Mexico;mx;America;MEX;Subnat;MEXr115;Mexico;16669;15;15
+Mexico;mx;America;MEX;Subnat;MEXr116;Michoacan de Ocampo;4705;16;16
+Mexico;mx;America;MEX;Subnat;MEXr117;Morelos;1938;17;17
+Mexico;mx;America;MEX;Subnat;MEXr118;Nayarit;1275;18;18
+Mexico;mx;America;MEX;Subnat;MEXr119;Nuevo Leon;5152;19;19
+Mexico;mx;America;MEX;Subnat;MEXr120;Oaxaca;4069;20;20
+Mexico;mx;America;MEX;Subnat;MEXr121;Puebla;6201;21;21
+Mexico;mx;America;MEX;Subnat;MEXr122;Queretaro;2143;22;22
+Mexico;mx;America;MEX;Subnat;MEXr123;Quintana Roo;1520;23;23
+Mexico;mx;America;MEX;Subnat;MEXr124;San Luis Potosi;2753;24;24
+Mexico;mx;America;MEX;Subnat;MEXr125;Sinaloa;3012;25;25
+Mexico;mx;America;MEX;Subnat;MEXr126;Sonora;2864;26;26
+Mexico;mx;America;MEX;Subnat;MEXr127;Tabasco;2401;27;27
+Mexico;mx;America;MEX;Subnat;MEXr128;Tamaulipas;3485;28;28
+Mexico;mx;America;MEX;Subnat;MEXr129;Tlaxcala;1294;29;29
+Mexico;mx;America;MEX;Subnat;MEXr130;Veracruz;8271;30;30
+Mexico;mx;America;MEX;Subnat;MEXr131;Yucatan;2140;31;31
+Mexico;mx;America;MEX;Subnat;MEXr132;Zacatecas;1635;32;32
+Palestine;ps;Asia/Pacific;PSE;National;PSEt;Total;4270;;
+Palestine;ps;Asia/Pacific;PSE;Subnat;PSEr104;Bethlehem, Hebron;814;;
+Palestine;ps;Asia/Pacific;PSE;Subnat;PSEr106;Deir El-Balah, Khan Yunis, Rafah;787;;
+Palestine;ps;Asia/Pacific;PSE;Subnat;PSEr101;Jenin, Tubas, Tulkarm, Nablus, Qalqiliya;923;;
+Palestine;ps;Asia/Pacific;PSE;Subnat;PSEr103;Jerusalem;388;;
+Palestine;ps;Asia/Pacific;PSE;Subnat;PSEr105;North Gaza, Gaza;958;;
+Palestine;ps;Asia/Pacific;PSE;Subnat;PSEr102;Salfit, Ramallah, Al-Bireh, Jericho, Al Aghwar;400;;
+Panama;pa;America;PAN;National;PANt;Total;3968;;
+Panama;pa;America;PAN;Subnat;PANr101;Bocas del Toro;152;1;1
+Panama;pa;America;PAN;Subnat;PANr104;Chiriqui;460;4;4
+Panama;pa;America;PAN;Subnat;PANr102;Cocle;260;2;2
+Panama;pa;America;PAN;Subnat;PANr103;Colon;275;3;3
+Panama;pa;America;PAN;Subnat;PANr105;Darien;54.1;5;5
+Panama;pa;America;PAN;Subnat;PANr111;Embera Wounaan;11.8;11;11
+Panama;pa;America;PAN;Subnat;PANr106;Herrera;123;6;6
+Panama;pa;America;PAN;Subnat;PANr110;Kuna Yala;41.9;10;10
+Panama;pa;America;PAN;Subnat;PANr107;Los Santos;98.5;7;7
+Panama;pa;America;PAN;Subnat;PANr112;Ngobe Bugle;196;12;12
+Panama;pa;America;PAN;Subnat;PANr108;Panama;2045;8;8
+Panama;pa;America;PAN;Subnat;PANr109;Veraguas;253;9;9
+Paraguay;py;America;PRY;National;PRYt;Total;6689;;
+Paraguay;py;America;PRY;Subnat;PRYr105;Central (Asuncion, Central);2353;0.11;0
+Paraguay;py;America;PRY;Subnat;PRYr102;North-East (Caaguazu, Alto Parana, Canideyu);1554;5.10.14;5
+Paraguay;py;America;PRY;Subnat;PRYr101;North-West (Boqueron, Alto Paraguay, Presidente Hayes, Conception, Amambay, San pedro, Cordillera);1202;1.2.3.13.15;1
+Paraguay;py;America;PRY;Subnat;PRYr104;South-East (Guaira, Misiones, Paraguari, Neembucu);885;4.8.9.12;4
+Paraguay;py;America;PRY;Subnat;PRYr103;South-West (Caazapa, Itapua);695;6.7;6
+Peru;pe;America;PER;National;PERt;Total;30471;;
+Peru;pe;America;PER;Subnat;PERr106;Central (Huancavelica, Huanuco, Junin, Pasco);3125;;
+Peru;pe;America;PER;Subnat;PERr103;East (Madre de Dios, Cusco, Puno, Apurimac);3465;;
+Peru;pe;America;PER;Subnat;PERr101;North (Tumbes, Piura, Lambayeque, Cajamarca, La Libertad);6546;;
+Peru;pe;America;PER;Subnat;PERr102;North East (Amazonas, Loreto, San Martin, Ucayali);2845;;
+Peru;pe;America;PER;Subnat;PERr104;South (Tacna, Moquegua, Arequipa, Ica, Ayacucho);3397;;
+Peru;pe;America;PER;Subnat;PERr105;West (Ancash, Lima, Callao);11093;;
+Poland;pl;Europe;POL;National;POLt;Total;37986;;
+Poland;pl;Europe;POL;Subnat;POLr112;Dolnoslaskie;2870;51;51
+Poland;pl;Europe;POL;Subnat;POLr114;Kujawsko-Pomorskie;2062;61;61
+Poland;pl;Europe;POL;Subnat;POLr101;Lodzkie;2468;11;11
+Poland;pl;Europe;POL;Subnat;POLr105;Lubelskie;2117;31;31
+Poland;pl;Europe;POL;Subnat;POLr111;Lubuskie;1007;43;43
+Poland;pl;Europe;POL;Subnat;POLr103;Malopolskie;3330;21;21
+Poland;pl;Europe;POL;Subnat;POLr102;Mazowieckie;5276;12;12
+Poland;pl;Europe;POL;Subnat;POLr113;Opolskie;987;52;52
+Poland;pl;Europe;POL;Subnat;POLr106;Podkarpackie;2101;32;32
+Poland;pl;Europe;POL;Subnat;POLr108;Podlaskie;1176;34;34
+Poland;pl;Europe;POL;Subnat;POLr116;Pomorskie;2277;63;63
+Poland;pl;Europe;POL;Subnat;POLr104;Slaskie;4522;22;22
+Poland;pl;Europe;POL;Subnat;POLr107;Swietokrzyskie;1245;33;33
+Poland;pl;Europe;POL;Subnat;POLr115;Warminsko-Mazurskie;1425;62;62
+Poland;pl;Europe;POL;Subnat;POLr109;Wielkopolskie;3432;41;41
+Poland;pl;Europe;POL;Subnat;POLr110;Zachodniopomorskie;1693;42;42
+Russia;ru;Europe;RUS;National;RUSt;Total;144097;;
+Russia;ru;Europe;RUS;Subnat;RUSr101;The Central Federal District;38149;14.15.17.20.24.28.29.34.38.42.45.46.54.61.66.68.70.78;14
+Russia;ru;Europe;RUS;Subnat;RUSr108;The Far East  Federal District;9425;10.99.30.44.81.98.64.8.77.5;5
+Russia;ru;Europe;RUS;Subnat;RUSr102;The North West Federal District;16020;11.19.86.87.27.41.47.13.49.58.40.22;11
+Russia;ru;Europe;RUS;Subnat;RUSr104;The North-Caucasian Federal District;6245;82.83.91.90.96.26.7;7
+Russia;ru;Europe;RUS;Subnat;RUSr105;The Privolzhsky (Volga) Federal District;19109;80.88.92.97.94.33.49.53.56.57.56.36.63.73.89;33
+Russia;ru;Europe;RUS;Subnat;RUSr107;The Siberian  Federal District;29675;84.93.95.1.25.32.50.52.69.4.76;1
+Russia;ru;Europe;RUS;Subnat;RUSr103;The South Federal District;13482;3.18.60.79.85.12.35.67;3
+Russia;ru;Europe;RUS;Subnat;RUSr106;The Urals  Federal District;11992;71.72.75.37.65.74;37
+Serbia;rs;Europe;SRB;National;SRBt;Total;7095;;
+Serbia;rs;Europe;SRB;Subnat;SRBr101;Belgrade;1605;1;1
+Serbia;rs;Europe;SRB;Subnat;SRBr104;South and East Serbia;1651;4;4
+Serbia;rs;Europe;SRB;Subnat;SRBr103;Sumadija and West Serbia;1952;3;3
+Serbia;rs;Europe;SRB;Subnat;SRBr102;Vojvodina;1888;2;2
+Slovakia;sk;Europe;SVK;National;SVKt;Total;5424;;
+Slovakia;sk;Europe;SVK;Subnat;SVKr101;Bratislavsky kraj;629;10;10
+Slovakia;sk;Europe;SVK;Subnat;SVKr103;Stredne Slovensko;1345;31.32;31
+Slovakia;sk;Europe;SVK;Subnat;SVKr104;Vychodne Slovensko;1616;41.42;41
+Slovakia;sk;Europe;SVK;Subnat;SVKr102;Zapadne Slovensko;1833;21.22.23;21
+SouthAfrica;za;Africa;ZAF;National;ZAFt;Total;55386;;
+SouthAfrica;za;Africa;ZAF;Subnat;ZAFr102;Eastern Cape;7067;22;22
+SouthAfrica;za;Africa;ZAF;Subnat;ZAFr104;Free State;2949;44;44
+SouthAfrica;za;Africa;ZAF;Subnat;ZAFr107;Gauteng;13640;77;77
+SouthAfrica;za;Africa;ZAF;Subnat;ZAFr105;KwaZulu Natal;10353;55;55
+SouthAfrica;za;Africa;ZAF;Subnat;ZAFr108;Mpumalanga;4460;88;88
+SouthAfrica;za;Africa;ZAF;Subnat;ZAFr106;North West;3834;66;66
+SouthAfrica;za;Africa;ZAF;Subnat;ZAFr103;Northern Cape;1173;33;33
+SouthAfrica;za;Africa;ZAF;Subnat;ZAFr109;Northern Province;5868;99;99
+SouthAfrica;za;Africa;ZAF;Subnat;ZAFr101;Western Cape;6043;11;11
+Spain;es;Europe;ESP;National;ESPt;Total;46445;;
+Spain;es;Europe;ESP;Subnat;ESPr115;Andalucia;8405;61;61
+Spain;es;Europe;ESP;Subnat;ESPr107;Aragon;1323;24;24
+Spain;es;Europe;ESP;Subnat;ESPr119;Canarias;2129;70;70
+Spain;es;Europe;ESP;Subnat;ESPr103;Cantabria;584;13;13
+Spain;es;Europe;ESP;Subnat;ESPr109;Castilla y Leon;2466;41;41
+Spain;es;Europe;ESP;Subnat;ESPr110;Castilla-la Mancha;2056;42;42
+Spain;es;Europe;ESP;Subnat;ESPr112;Cataluna;7402;51;51
+Spain;es;Europe;ESP;Subnat;ESPr117;Ciudad Autonoma de Ceuta;84.6;63;63
+Spain;es;Europe;ESP;Subnat;ESPr118;Ciudad Autonoma de Melilla;84.8;64;64
+Spain;es;Europe;ESP;Subnat;ESPr108;Comunidad de Madrid;6406;30;30
+Spain;es;Europe;ESP;Subnat;ESPr105;Comunidad Foral de Navarra;637;22;22
+Spain;es;Europe;ESP;Subnat;ESPr113;Comunidad Valenciana;4935;52;52
+Spain;es;Europe;ESP;Subnat;ESPr111;Extremadura;1088;43;43
+Spain;es;Europe;ESP;Subnat;ESPr101;Galicia;2727;11;11
+Spain;es;Europe;ESP;Subnat;ESPr114;Illes Balears;1131;53;53
+Spain;es;Europe;ESP;Subnat;ESPr106;La Rioja;313;23;23
+Spain;es;Europe;ESP;Subnat;ESPr104;Pais Vasco;2165;21;21
+Spain;es;Europe;ESP;Subnat;ESPr102;Principado de Asturias;1045;12;12
+Spain;es;Europe;ESP;Subnat;ESPr116;Region de Murcia;1465;62;62
+Switzerland;ch;Europe;CHE;National;CHEt;Total;8282;;
+Switzerland;ch;Europe;CHE;Subnat;CHEr106;Central Switzerland;787;6;6
+Switzerland;ch;Europe;CHE;Subnat;CHEr105;Eastern Switzerland;1151;5;5
+Switzerland;ch;Europe;CHE;Subnat;CHEr102;Espace Mittelland;1836;2;2
+Switzerland;ch;Europe;CHE;Subnat;CHEr101;Lake Geneva region;1579;1;1
+Switzerland;ch;Europe;CHE;Subnat;CHEr103;Northwestern Switzerland;1123;3;3
+Switzerland;ch;Europe;CHE;Subnat;CHEr107;Ticino;352;7;7
+Switzerland;ch;Europe;CHE;Subnat;CHEr104;Zurich;1454;4;4
+UnitedStates;us;America;USA;National;USAt;Total;320635;;
+UnitedStates;us;America;USA;Subnat;USAr101;Alabama;4851;63;63
+UnitedStates;us;America;USA;Subnat;USAr102;Alaska;736;94;94
+UnitedStates;us;America;USA;Subnat;USAr103;Arizona;6819;86;86
+UnitedStates;us;America;USA;Subnat;USAr104;Arkansas;2975;71;71
+UnitedStates;us;America;USA;Subnat;USAr105;California;38983;93;93
+UnitedStates;us;America;USA;Subnat;USAr106;Colorado;5429;84;84
+UnitedStates;us;America;USA;Subnat;USAr107;Connecticut;3589;16;16
+UnitedStates;us;America;USA;Subnat;USAr108;Delaware;943;51;51
+UnitedStates;us;America;USA;Subnat;USAr109;District of Columbia;669;53;53
+UnitedStates;us;America;USA;Subnat;USAr110;Florida;20216;59;59
+UnitedStates;us;America;USA;Subnat;USAr111;Georgia;10193;58;58
+UnitedStates;us;America;USA;Subnat;USAr112;Hawaii;1419;95;95
+UnitedStates;us;America;USA;Subnat;USAr113;Idaho;1662;82;82
+UnitedStates;us;America;USA;Subnat;USAr114;Illinois;12832;33;33
+UnitedStates;us;America;USA;Subnat;USAr115;Indiana;6612;32;32
+UnitedStates;us;America;USA;Subnat;USAr116;Iowa;3115;42;42
+UnitedStates;us;America;USA;Subnat;USAr117;Kansas;2903;47;47
+UnitedStates;us;America;USA;Subnat;USAr118;Kentucky;4421;61;61
+UnitedStates;us;America;USA;Subnat;USAr119;Louisiana;4650;72;72
+UnitedStates;us;America;USA;Subnat;USAr120;Maine;1331;11;11
+UnitedStates;us;America;USA;Subnat;USAr121;Maryland;5993;52;52
+UnitedStates;us;America;USA;Subnat;USAr122;Massachusetts;6772;14;14
+UnitedStates;us;America;USA;Subnat;USAr123;Michigan;9914;34;34
+UnitedStates;us;America;USA;Subnat;USAr124;Minnesota;5491;41;41
+UnitedStates;us;America;USA;Subnat;USAr125;Mississippi;2986;64;64
+UnitedStates;us;America;USA;Subnat;USAr126;Missouri;6072;43;43
+UnitedStates;us;America;USA;Subnat;USAr127;Montana;1032;81;81
+UnitedStates;us;America;USA;Subnat;USAr128;Nebraska;1891;46;46
+UnitedStates;us;America;USA;Subnat;USAr129;Nevada;2889;88;88
+UnitedStates;us;America;USA;Subnat;USAr130;New Hampshire;1331;12;12
+UnitedStates;us;America;USA;Subnat;USAr131;New Jersey;8947;22;22
+UnitedStates;us;America;USA;Subnat;USAr132;New Mexico;2084;85;85
+UnitedStates;us;America;USA;Subnat;USAr133;New York;19744;21;21
+UnitedStates;us;America;USA;Subnat;USAr134;North Carolina;10039;56;56
+UnitedStates;us;America;USA;Subnat;USAr135;North Dakota;742;44;44
+UnitedStates;us;America;USA;Subnat;USAr136;Ohio;11601;31;31
+UnitedStates;us;America;USA;Subnat;USAr137;Oklahoma;3887;73;73
+UnitedStates;us;America;USA;Subnat;USAr138;Oregon;4021;92;92
+UnitedStates;us;America;USA;Subnat;USAr139;Pennsylvania;12776;23;23
+UnitedStates;us;America;USA;Subnat;USAr140;Rhode Island;1055;15;15
+UnitedStates;us;America;USA;Subnat;USAr141;South Carolina;4889;57;57
+UnitedStates;us;America;USA;Subnat;USAr142;South Dakota;858;45;45
+UnitedStates;us;America;USA;Subnat;USAr143;Tennessee;6597;62;62
+UnitedStates;us;America;USA;Subnat;USAr144;Texas;27350;74;74
+UnitedStates;us;America;USA;Subnat;USAr145;Utah;2992;87;87
+UnitedStates;us;America;USA;Subnat;USAr146;Vermont;625;13;13
+UnitedStates;us;America;USA;Subnat;USAr147;Virginia;8363;54;54
+UnitedStates;us;America;USA;Subnat;USAr148;Washington;7167;91;91
+UnitedStates;us;America;USA;Subnat;USAr149;West Virginia;1836;55;55
+UnitedStates;us;America;USA;Subnat;USAr150;Wisconsin;5763;35;35
+UnitedStates;us;America;USA;Subnat;USAr151;Wyoming;581;83;83
+Uruguay;uy;America;URY;National;URYt;Total;3412;;
+Uruguay;uy;America;URY;Subnat;URYr105;Centro (Durazno and Tacuarembo);154;6.18;6
+Uruguay;uy;America;URY;Subnat;URYr106;Centro Sur (Flores, Florida and Lavalleja);174;7.8.9;7
+Uruguay;uy;America;URY;Subnat;URYr103;Costa Este (Canelones, Maldonado and Rocha);464;3.10.14;3
+Uruguay;uy;America;URY;Subnat;URYr107;Litoral Norte (Paysandu, Salto and Rio Negro);301;11.12.15;11
+Uruguay;uy;America;URY;Subnat;URYr104;Litoral Sur (Soriano, Colonia and San Jose);293;5.16.17;5
+Uruguay;uy;America;URY;Subnat;URYr101;Montevideo and Metropolitan area;1720;1;1
+Uruguay;uy;America;URY;Subnat;URYr102;Norte (Artigas, Rivera, Cerro Largo and Trienta y Tres);306;2.4.13.19;2
+Vietnam;vn;Asia/Pacific;VNM;National;VNMt;Total;92677;;
+Vietnam;vn;Asia/Pacific;VNM;Subnat;VNMr104;Central Highlands;5853;6;6
+Vietnam;vn;Asia/Pacific;VNM;Subnat;VNMr106;Mekong River Delta;17223;8;8
+Vietnam;vn;Asia/Pacific;VNM;Subnat;VNMr103;North Central Coast and South Central Coast;19770;4.5;4
+Vietnam;vn;Asia/Pacific;VNM;Subnat;VNMr102;North East, North West;12611;2.3;2
+Vietnam;vn;Asia/Pacific;VNM;Subnat;VNMr101;Red River Delta;21880;1;1
+Vietnam;vn;Asia/Pacific;VNM;Subnat;VNMr105;South East;15339;7;7
+Canada;ca;America;CAN;Subnat;CANr101;Newfoundland and Labrador;527;10;10
+Canada;ca;America;CAN;Subnat;CANr102;Prince Edward Island, Yukon Territory, Northwest Territories, Nunavut;146;11;11
+Canada;ca;America;CAN;Subnat;CANr103;Nova Scotia;939;12;12
+Canada;ca;America;CAN;Subnat;CANr104;New Brunswick;752;13;13
+Canada;ca;America;CAN;Subnat;CANr105;Quebec;8233;24;24
+Canada;ca;America;CAN;Subnat;CANr106;Ontario;13754;35;35
+Canada;ca;America;CAN;Subnat;CANr107;Manitoba;1292;46;46
+Canada;ca;America;CAN;Subnat;CANr108;Saskatchewan;1128;47;47
+Canada;ca;America;CAN;Subnat;CANr109;Alberta;4167;48;48
+Canada;ca;America;CAN;Subnat;CANr110;British Columbia;4683;59;59
+Canada;ca;America;CAN;National;CANt;Total;35703;;
+Iceland;is;Europe;ISL;National;ISLt;Total;331;1;1
+Norway;no;Europe;NOR;National;NORt;Total;5189;;
+Sweden;se;Europe;SWE;Subnat;SWEr101;Stockholm;2215;11;11
+Sweden;se;Europe;SWE;Subnat;SWEr102;Ostra Mellansverige;1630;12;12
+Sweden;se;Europe;SWE;Subnat;SWEr103;Smaland med oarna;830;21;21
+Sweden;se;Europe;SWE;Subnat;SWEr104;Sydsverige;1451;22;22
+Sweden;se;Europe;SWE;Subnat;SWEr105;Vastsverige;1953;23;23
+Sweden;se;Europe;SWE;Subnat;SWEr106;Norra Mellansverige;836;31;31
+Sweden;se;Europe;SWE;Subnat;SWEr107;Mellersta Norrland;371;32;32
+Sweden;se;Europe;SWE;Subnat;SWEr108;Ovre Norrland;513;33;33
+Australia;au;Oceania;AUS;Subnat;AUSr101;New South Wales;7630;1;1
+Australia;au;Oceania;AUS;Subnat;AUSr102;Victoria;6047;2;2
+Australia;au;Oceania;AUS;Subnat;AUSr103;Queensland;4771;3;3
+Australia;au;Oceania;AUS;Subnat;AUSr104;South Australia;1697;4;4
+Australia;au;Oceania;AUS;Subnat;AUSr105;Western Australia;2516;5;5
+Australia;au;Oceania;AUS;Subnat;AUSr106;Tasmania;516;6;6
+Australia;au;Oceania;AUS;Subnat;AUSr107;Northern Territory;243;7;7
+Australia;au;Oceania;AUS;Subnat;AUSr108;Australian Capital Territory;396;7;7
+UnitedKingdom;uk;Europe;GBR;Subnat;GBRr101;North East;2635;1;1
+UnitedKingdom;uk;Europe;GBR;Subnat;GBRr102;North West;7183;2;2
+UnitedKingdom;uk;Europe;GBR;Subnat;GBRr103;Yorkshire and The Humber;5408;3;3
+UnitedKingdom;uk;Europe;GBR;Subnat;GBRr104;East Midlands;4670;4;4
+UnitedKingdom;uk;Europe;GBR;Subnat;GBRr105;West Midlands;5754;5;5
+UnitedKingdom;uk;Europe;GBR;Subnat;GBRr106;East of England;6068;6;6
+UnitedKingdom;uk;Europe;GBR;Subnat;GBRr107;London;8638;7;7
+UnitedKingdom;uk;Europe;GBR;Subnat;GBRr108;South East;8946;8;8
+UnitedKingdom;uk;Europe;GBR;Subnat;GBRr109;South West;5463;9;9
+UnitedKingdom;uk;Europe;GBR;Subnat;GBRr110;Wales;3122;10;10
+UnitedKingdom;uk;Europe;GBR;Subnat;GBRr111;Scotland;5376;11;11
+UnitedKingdom;uk;Europe;GBR;Subnat;GBRr112;Northern Ireland;1854;12;12
