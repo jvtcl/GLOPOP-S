@@ -740,7 +740,7 @@ dhs_survey2 <- function(dhs){
 # REPLACE SURVEY
 
 
-similarcountries <- read.csv('similar_countries_20june24.csv')
+similarcountries <- read.csv('similar_countries_5august24.csv')
 
 similarcountries_row <- similarcountries[similarcountries$ISOcode == isocode,]
 
