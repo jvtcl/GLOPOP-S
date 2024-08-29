@@ -28,9 +28,11 @@ library(mlfit)
 
 
 
+#isocode = 'cz13'
 
+#isocode = 'FIN'
 
-#setwd('C:\\Users\\mtn308\\OneDrive - Vrije Universiteit Amsterdam\\Documents\\Paper2')
+#setwd('C:\\Users\\mtn308\\OneDrive - Vrije Universiteit Amsterdam\\Documents\\Paper2\\LISapril2024')
 
 
 liscodecountries <- read.csv('LIS_codes_countries2.csv', sep = ';')
@@ -394,8 +396,6 @@ trs_frequency <- function(df){
   
 } 
 
-
-
 new_frequencies <- function(df1, df2){
   
   # We use this function to merge household size to the joint distribution of  
@@ -483,7 +483,6 @@ new_frequencies <- function(df1, df2){
   
 }
 
-
 new_frequencies_updatemay23 <- function(df1, df2, var){
   
   # with this function we merge the partner's variables to the joint distribution
@@ -494,7 +493,7 @@ new_frequencies_updatemay23 <- function(df1, df2, var){
   
   colnames(df2)[which(names(df2) == var)] <- "var"
   
-
+  
   
   
   
@@ -547,7 +546,6 @@ new_frequencies_updatemay23 <- function(df1, df2, var){
   return(df1_mergetest)
   
 }
-
 
 fill_zero_cells <- function(jointhead1, farm_presence){
   # With this function we fill zeros in the joint distributions
@@ -1292,8 +1290,6 @@ fill_zero_cells_hhtype <- function(jointhead1, farm_presence, hhtype){
   
 }
 
-
-
 new_partner_joints <- function(partvar, df1tot, educatshead){
   # In the LIS textfiles we have joint distributions of the partner's age, gender and education per household type.
   # Here we merge the joint distributions of the partner's age, gender or education over the household types, so that
@@ -1354,6 +1350,10 @@ new_partner_joints <- function(partvar, df1tot, educatshead){
       agehead3yearyounger = NA
     } 
     
+    if (agehead2yearyounger == 0){
+      agehead2yearyounger = NA
+    }
+    
     yage <- c(0.0000000001, NA, NA, agehead3yearyounger, agehead2yearyounger, agehead1yearyounger, ageequal) 
     xage <- c(1,2,3,4,5,6,7)
     
@@ -1386,6 +1386,13 @@ new_partner_joints <- function(partvar, df1tot, educatshead){
                                                                                agehead3yearyounger, agehead2yearyounger, agehead1yearyounger, ageequal, agehead1yearolder, 
                                                                                agehead2yearolder, agehead3yearolder, exp(predicted_values_older[5:6])))
     
+    
+    if (is.na(agehead2yearyounger) == TRUE){
+      agehead2yearyounger = exp(predicted_values_younger[5])
+      age_probs <- data.frame(agediff = c(-5,-4,-3,-2,-1,0,1,2,3,4,5), probs = c(exp(predicted_values_younger[2:3]), 
+                                                                                 agehead3yearyounger, agehead2yearyounger, agehead1yearyounger, ageequal, agehead1yearolder, 
+                                                                                 agehead2yearolder, agehead3yearolder, exp(predicted_values_older[5:6])))
+    }
     
     ageage['agediff'] = ageage['age_head'] - ageage['age_part']
     
@@ -1780,7 +1787,6 @@ new_partner_joints <- function(partvar, df1tot, educatshead){
   
 }
 
-
 add_partner <- function(jointhead, txtpath, HIDbegin){
   check210a = sum(jointhead$Frequency)
   jointpartage <- new_partner_joints('age', df1tot, educatshead)
@@ -1868,7 +1874,7 @@ add_cat_hhsize2 <- function(df, joint_hhsize2){
     cumul.prob_matrix <- prob_matrix %*% upper.tri(diag(ncol(prob_matrix)), diag = TRUE) / rowSums(prob_matrix)
     
     df[,CHILD_CAT := rowSums(compare_vector > cumul.prob_matrix) + childcats[1]]
-
+    
     df[,c(as.character(childcats)):=NULL]
     
   }
@@ -2336,8 +2342,8 @@ add_educ_child_rel_nonrel <- function(df, jointeduc345, child_rel_or_nonrel, edu
     }
   }
   
-
-
+  
+  
   educcats <- unique(jointeduc345_nozero$education)
   
   jointeduc345[,c('Frequency', 'Sum_Freq'):=NULL]
@@ -2474,6 +2480,7 @@ add_children_characteristics <- function(jointhead_head, children_table, txtpath
   jointchild_agesex$Frequency[jointchild_agesex$age_head == 4 & jointchild_agesex$AGECAT == 4] <- 0
   jointchild_agesex$Frequency[jointchild_agesex$age_head == 5 & jointchild_agesex$AGECAT == 5] <- 0
   jointchild_agesex$Frequency[jointchild_agesex$age_head == 6 & jointchild_agesex$AGECAT == 6] <- 0
+  jointchild_agesex$Frequency[jointchild_agesex$age_head == 7 & jointchild_agesex$AGECAT == 7] <- 0
   
   jointchild_educ <- text_to_df(txtpath, beginlines_list[[34]], endlines_list[[34]], FALSE)
   
@@ -3060,11 +3067,11 @@ smalltable_endlines_list = list("> dfmerg_hh_relative3 <- dfmerg_hh[dfmerg_hh$nr
 
 
 ##### availability farming 
-txtpath <- paste0(isocode, "_compl_margfix.txt")
+txtpath <- paste0(liscode, "_compl_update.txt")
 farm_presence <- farming_available(txtpath)
 
 # set to 0 for error calculation
-# farm_presence <- 0
+farm_presence <- 0
 
 
 #############################
@@ -3072,16 +3079,16 @@ farm_presence <- farming_available(txtpath)
 
 # txtpathfreq file contains the frequencies of each pair of characteristics per region and at a national level
 
-txtpathfreq <- paste0(isocode, "_freq_margfix.txt") 
+txtpathfreq <- paste0(liscode, "_freq_update.txt") 
 
 beginlist_freq = list('> print((data.frame(xtabs(hpopwgt ~ farming_number + HHTYPE_CAT + region_number, data = dfhead))$Freq)/sum(dfhead$hpopwgt))',
                       '> print((data.frame(xtabs(hpopwgt ~ farming_number + HHSIZECAT + region_number, data = dfhead))$Freq)/sum(dfhead$hpopwgt))',
-                      '> print((data.frame(xtabs(hpopwgt ~ farming_number + INCOMEQQ + region_number, data = dfhead))$Freq)/sum(dfhead$hpopwgt))',
+                      '> print((data.frame(xtabs(ppopwgt ~ farming_number + INCOMEQQ + region_number, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
                       '> print((data.frame(xtabs(ppopwgt ~ farming_number + AGECAT + region_number, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
                       '> print((data.frame(xtabs(ppopwgt ~ farming_number + education + region_number, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
                       '> print((data.frame(xtabs(ppopwgt ~ farming_number + sex_number + region_number, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
-                      '> print((data.frame(xtabs(hpopwgt ~ INCOMEQQ + HHTYPE_CAT + region_number, data = dfhead))$Freq)/sum(dfhead$hpopwgt))',
-                      '> print((data.frame(xtabs(hpopwgt ~ INCOMEQQ + HHSIZECAT + region_number, data = dfhead))$Freq)/sum(dfhead$hpopwgt))',
+                      '> print((data.frame(xtabs(ppopwgt ~ INCOMEQQ + HHTYPE_CAT + region_number, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
+                      '> print((data.frame(xtabs(ppopwgt ~ INCOMEQQ + HHSIZECAT + region_number, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
                       '> print((data.frame(xtabs(ppopwgt ~ INCOMEQQ + AGECAT + region_number, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
                       '> print((data.frame(xtabs(ppopwgt ~ INCOMEQQ + education + region_number, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
                       '> print((data.frame(xtabs(ppopwgt ~ INCOMEQQ + sex_number + region_number, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
@@ -3099,12 +3106,12 @@ beginlist_freq = list('> print((data.frame(xtabs(hpopwgt ~ farming_number + HHTY
 
 
 endlist_freq = list('> print((data.frame(xtabs(hpopwgt ~ farming_number + HHSIZECAT + region_number, data = dfhead))$Freq)/sum(dfhead$hpopwgt))',
-                    '> print((data.frame(xtabs(hpopwgt ~ farming_number + INCOMEQQ + region_number, data = dfhead))$Freq)/sum(dfhead$hpopwgt))',
+                    '> print((data.frame(xtabs(ppopwgt ~ farming_number + INCOMEQQ + region_number, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
                     '> print((data.frame(xtabs(ppopwgt ~ farming_number + AGECAT + region_number, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
                     '> print((data.frame(xtabs(ppopwgt ~ farming_number + education + region_number, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
                     '> print((data.frame(xtabs(ppopwgt ~ farming_number + sex_number + region_number, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
-                    '> print((data.frame(xtabs(hpopwgt ~ INCOMEQQ + HHTYPE_CAT + region_number, data = dfhead))$Freq)/sum(dfhead$hpopwgt))',
-                    '> print((data.frame(xtabs(hpopwgt ~ INCOMEQQ + HHSIZECAT + region_number, data = dfhead))$Freq)/sum(dfhead$hpopwgt))',
+                    '> print((data.frame(xtabs(ppopwgt ~ INCOMEQQ + HHTYPE_CAT + region_number, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
+                    '> print((data.frame(xtabs(ppopwgt ~ INCOMEQQ + HHSIZECAT + region_number, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
                     '> print((data.frame(xtabs(ppopwgt ~ INCOMEQQ + AGECAT + region_number, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
                     '> print((data.frame(xtabs(ppopwgt ~ INCOMEQQ + education + region_number, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
                     '> print((data.frame(xtabs(ppopwgt ~ INCOMEQQ + sex_number + region_number, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
@@ -3123,12 +3130,12 @@ endlist_freq = list('> print((data.frame(xtabs(hpopwgt ~ farming_number + HHSIZE
 
 beginlist_freqtotal = list('> print((data.frame(xtabs(hpopwgt ~ farming_number + HHTYPE_CAT, data = dfhead))$Freq)/sum(dfhead$hpopwgt))',
                            '> print((data.frame(xtabs(hpopwgt ~ farming_number + HHSIZECAT, data = dfhead))$Freq)/sum(dfhead$hpopwgt))',
-                           '> print((data.frame(xtabs(hpopwgt ~ farming_number + INCOMEQQ, data = dfhead))$Freq)/sum(dfhead$hpopwgt))',
+                           '> print((data.frame(xtabs(ppopwgt ~ farming_number + INCOMEQQ, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
                            '> print((data.frame(xtabs(ppopwgt ~ farming_number + AGECAT, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
                            '> print((data.frame(xtabs(ppopwgt ~ farming_number + education, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
                            '> print((data.frame(xtabs(ppopwgt ~ farming_number + sex_number, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
-                           '> print((data.frame(xtabs(hpopwgt ~ INCOMEQQ + HHTYPE_CAT, data = dfhead))$Freq)/sum(dfhead$hpopwgt))',
-                           '> print((data.frame(xtabs(hpopwgt ~ INCOMEQQ + HHSIZECAT, data = dfhead))$Freq)/sum(dfhead$hpopwgt))',
+                           '> print((data.frame(xtabs(ppopwgt ~ INCOMEQQ + HHTYPE_CAT, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
+                           '> print((data.frame(xtabs(ppopwgt ~ INCOMEQQ + HHSIZECAT, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
                            '> print((data.frame(xtabs(ppopwgt ~ INCOMEQQ + AGECAT, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
                            '> print((data.frame(xtabs(ppopwgt ~ INCOMEQQ + education, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
                            '> print((data.frame(xtabs(ppopwgt ~ INCOMEQQ + sex_number, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
@@ -3146,12 +3153,12 @@ beginlist_freqtotal = list('> print((data.frame(xtabs(hpopwgt ~ farming_number +
 
 
 endlist_freqtotal = list('> print((data.frame(xtabs(hpopwgt ~ farming_number + HHSIZECAT, data = dfhead))$Freq)/sum(dfhead$hpopwgt))',
-                         '> print((data.frame(xtabs(hpopwgt ~ farming_number + INCOMEQQ, data = dfhead))$Freq)/sum(dfhead$hpopwgt))',
+                         '> print((data.frame(xtabs(ppopwgt ~ farming_number + INCOMEQQ, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
                          '> print((data.frame(xtabs(ppopwgt ~ farming_number + AGECAT, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
                          '> print((data.frame(xtabs(ppopwgt ~ farming_number + education, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
                          '> print((data.frame(xtabs(ppopwgt ~ farming_number + sex_number, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
-                         '> print((data.frame(xtabs(hpopwgt ~ INCOMEQQ + HHTYPE_CAT, data = dfhead))$Freq)/sum(dfhead$hpopwgt))',
-                         '> print((data.frame(xtabs(hpopwgt ~ INCOMEQQ + HHSIZECAT, data = dfhead))$Freq)/sum(dfhead$hpopwgt))',
+                         '> print((data.frame(xtabs(ppopwgt ~ INCOMEQQ + HHTYPE_CAT, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
+                         '> print((data.frame(xtabs(ppopwgt ~ INCOMEQQ + HHSIZECAT, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
                          '> print((data.frame(xtabs(ppopwgt ~ INCOMEQQ + AGECAT, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
                          '> print((data.frame(xtabs(ppopwgt ~ INCOMEQQ + education, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
                          '> print((data.frame(xtabs(ppopwgt ~ INCOMEQQ + sex_number, data = dfmerg))$Freq)/sum(dfmerg$ppopwgt))',
@@ -3250,7 +3257,7 @@ edu_tib$EDUCAT <- as.integer(edu_tib$EDUCAT)
 DF_errors <- data.frame('iso_code' = isocode, 'Synth_sq_error' = 0, 'National_sq_error' = 0, 'Marginal_sq_error' = 0)
 
 
-txtpath <- paste0(isocode, "_compl_margfix.txt")
+txtpath <- paste0(liscode, "_compl_update.txt")
 
 regiondf <- region_numbers(txtpath)
 
@@ -3278,7 +3285,7 @@ nonrelative_ind <- yes_no_nonrelatives(txtpath)
 # uselisdata == 'no'. 
 
 if (uselisdata == 'no'){
-
+  
   #single households 
   jointhead100 <- text_to_df(txtpath, beginlines_list[[1]], endlines_list[[1]], T)
   jointhead100$Frequency <- jointhead100$Frequency
@@ -3394,8 +3401,8 @@ if (uselisdata == 'no'){
   jointhead220 <- fill_zero_cells_hhtype(jointhead220, farm_presence, 220)
   joint_hhsize1 <- text_to_df(txtpath, beginlines_list[[7]], endlines_list[[7]], T)
   joint_hhsize1 <- fill_zero_cells(joint_hhsize1, farm_presence)
-
-
+  
+  
   jointhead220 <- new_frequencies(jointhead220, joint_hhsize1)
   gc()
   
@@ -3418,7 +3425,7 @@ if (uselisdata == 'no'){
   jointhead220_head <- add_cat_hhsize2(jointhead220_head, joint_hhsize2)
   gc()
   
-
+  
   jointhead220_head <- add_children_characteristics(jointhead220_head, children_table, txtpath, beginlines_list, endlines_list, add_age_child_rel_nonrel, add_sex_child_rel_nonrel, add_educ_child_rel_nonrel)
   
   
@@ -3802,13 +3809,13 @@ if (uselisdata == 'no'){
   
   print('saved LIS data')
   
-  filename_length_LIS = paste0('length_LIS_survey_may23', isocode, '.csv')
+  filename_length_LIS = paste0('length_LIS_survey_', isocode, '.csv')
   
-  write.csv(nrow(jointhead100small), filename_length_LIS, row.names = FALSE)
-
+  write.table(nrow(jointhead100small), filename_length_LIS, row.names = FALSE, sep = ',')
+  
 } else if (uselisdata == 'yes'){
   
-  filename_length <- paste0('length_LIS_survey_may23', isocode, '.csv')
+  filename_length <- paste0('length_LIS_survey_', isocode, '.csv')
   rowlength_LIS <- read.csv(filename_length, sep = ',', header = TRUE)
   
   l = rowlength_LIS$x
@@ -3830,6 +3837,20 @@ if (uselisdata == 'no'){
   close(con)
   
   print('imported LIS data')
+  
+  if (isocode == 'CHN'){
+    
+    jointhead100smallhhsize5 <- jointhead100small[jointhead100small$HHSIZECAT < 6,]
+    
+    jointhead100smallhhsize6 <- jointhead100small[jointhead100small$HHSIZECAT == 6,]
+    jointhead100smallhhsize6$WEIGHTS <- jointhead100smallhhsize6$WEIGHTS * 10
+    
+    jointhead100small <- rbind.data.frame(jointhead100smallhhsize5, jointhead100smallhhsize6)
+    
+    jointhead100small <- jointhead100small[jointhead100small$WEIGHTS > 2,]
+    
+  }
+
   
   
   jointhead100small <- as.data.table(jointhead100small)
@@ -3867,9 +3888,15 @@ incomemarg <- incomemarg %>% rename(INCOME = INCOMEQQ, GEOLEV1 = region_number)
 income_tib <- as_tibble(incomemarg)
 income_tib <- income_tib %>% arrange(GEOLEV1)
 
+print('income_tib 1')
+print(income_tib)
+
 initial_regionnumbers <- unique(incomemarg$GEOLEV1)
 income_tib$GEOLEV1 <- as.integer(income_tib$GEOLEV1)
 income_tib$INCOME <- as.integer(income_tib$INCOME)
+
+print('income_tib 2')
+print(income_tib)
 
 ruralmarg <- text_to_df(txtpath, marginals_beginlist[[2]], marginals_endlist[[2]], F)
 ruralmarg <- ruralmarg %>% rename(RURAL = rural_number, GEOLEV1 = region_number)
@@ -3922,31 +3949,29 @@ sex_tib$GENDER <- as.integer(sex_tib$GENDER)
 
 
 # NEW RURAL MARGINAL
-SMODmarg <- read.csv('individual_marginals_UrbanRural.csv', sep = ';', header = TRUE)
+#SMODmarg <- read.csv('individual_marginals_UrbanRural.csv', sep = ';', header = TRUE)
+#SMODmarg <- read.csv('rural_urban_marginals_march24.csv', sep = ',', header = TRUE)
 GDL_pop <- read.csv('GDL_match_population_all_LIS.csv', sep = ';', header = TRUE)
-GDL_pop <- GDL_pop %>% rename('GDLCODE' = 'GDLcode')
+population <- read.csv('GHSpopulationGDLregions.csv', sep = ',', header = TRUE)
 
-if (liscodeletters %in% c('gr', 'be', 'ie', 'cn', 'in', 'it', 'jp')){
-  GDL_SMOD <- read.csv('fix_regions_griebe.csv', sep = ';', header = TRUE)
-  GDL_SMOD['Rural_pop'] <- GDL_SMOD['year2015'] * GDL_SMOD['Rural_percent'] * 1000
-  GDL_SMOD['Urban_pop'] <- GDL_SMOD['year2015'] * GDL_SMOD['Urban_percent'] * 1000
+SMODmarg <- read.csv('GHSpopulationGDLregions.csv', sep = ',', header = TRUE)
+
+GDL_pop <- left_join(GDL_pop, population %>% select(GDLcode, Population), by = 'GDLcode')
+
+
+# we kunnen population gebruiken ipv SMODmarg. 
+
+if (liscodeletters %in% c('gr', 'be', 'ie', 'cn', 'in', 'it', 'jp', 'au')){
+  GDL_SMOD <- read.csv('fix_regions_griebe.csv', sep = ',', header = TRUE)
+  GDL_SMOD['Rural_pop'] <- GDL_SMOD['Totalpop'] * GDL_SMOD['Rural_percent']
+  GDL_SMOD['Urban_pop'] <- GDL_SMOD['Totalpop'] * GDL_SMOD['Urban_percent']
   
-  sum_GDL_POP <- GDL_SMOD %>% group_by(liscountry, region_number) %>% summarise(Sum_rural_pop = sum(Rural_pop), Sum_urban_pop = sum(Urban_pop), Sum_year2015 = sum(year2015))
+  sum_GDL_POP <- GDL_SMOD %>% group_by(liscountry, region_number) %>% summarise(Sum_rural_pop = sum(Rural_pop), Sum_urban_pop = sum(Urban_pop), Sum_year2015 = sum(Totalpop))
   
   sum_GDL_POP <- sum_GDL_POP[sum_GDL_POP$liscountry == liscodeletters,]
   sum_GDL_POP <- sum_GDL_POP %>% ungroup() %>% select(-liscountry)
   
   sum_GDL_POP <- sum_GDL_POP %>% rename('GEOLEV1' = 'region_number')
-  
-  sum_indi <- sexmarg %>% group_by(GEOLEV1) %>% summarise(Population = sum(Frequency))
-  
-  sum_GDL_POP <- left_join(sum_GDL_POP, sum_indi, by = 'GEOLEV1')
-  
-  sum_GDL_POP['adjust'] <- sum_GDL_POP['Population'] / (1000*sum_GDL_POP['Sum_year2015'])
-  
-  sum_GDL_POP['Sum_rural_pop'] <- sum_GDL_POP['Sum_rural_pop'] * sum_GDL_POP['adjust']
-  sum_GDL_POP['Sum_urban_pop'] <- sum_GDL_POP['Sum_urban_pop'] * sum_GDL_POP['adjust']
-  
   
   ruralmargSMOD0 <- sum_GDL_POP
   ruralmargSMOD0['RURAL'] <- 0
@@ -3965,63 +3990,50 @@ if (liscodeletters %in% c('gr', 'be', 'ie', 'cn', 'in', 'it', 'jp')){
   
   
   
-} else if (liscodeletters %ni% c('gr', 'be', 'ie', 'cn', 'in', 'it', 'jp')) {
+} else if (liscodeletters %ni% c('gr', 'be', 'ie', 'cn', 'in', 'it', 'jp', 'au')) {
   
-  SMODmarg <- SMODmarg %>% rename('GDLCODE' = 'GDLcode')
-  
-  SMODmarg <- left_join(SMODmarg, GDL_pop, by = 'GDLCODE')
+  SMODmarg <- left_join(SMODmarg, GDL_pop %>% select(GDLcode, liscountry, region_number), by = 'GDLcode')
   
   SMODmarg <- SMODmarg[SMODmarg$liscountry == liscodeletters,]
   SMODmarg <- SMODmarg[!is.na(SMODmarg$liscountry),]
   
-  ruralmargSMOD <- ruralmarg
+  #ruralmargSMOD <- ruralmarg
   
-  if (liscodeletters == 'us'){
+  #if (liscodeletters == 'us'){
     # for some reason delaware (51) is missing in rural marg LIS
-    add_rural51 <- data.frame('GEOLEV1' = c(51, 51), 'RURAL' = c(0,1), 'Frequency' = c(0,0))
-    ruralmargSMOD <- rbind(ruralmargSMOD, add_rural51)
-  }
+  #  add_rural51 <- data.frame('GEOLEV1' = c(51, 51), 'RURAL' = c(0,1), 'Frequency' = c(0,0))
+  #  ruralmargSMOD <- rbind(ruralmargSMOD, add_rural51)
+  #}
   
   
   
   SMODmarg <- SMODmarg %>% rename('GEOLEV1' = 'region_number')
   
   
-  ruralmargSMOD <- left_join(ruralmargSMOD, SMODmarg, by = 'GEOLEV1')
+  ruralmargSMOD <- SMODmarg
   
-  ruralmargSMOD0 <- ruralmargSMOD[ruralmargSMOD$RURAL == 0,]
-  ruralmargSMOD1 <- ruralmargSMOD[ruralmargSMOD$RURAL == 1,]
+  ruralmargSMOD0 <- ruralmargSMOD
+  ruralmargSMOD1 <- ruralmargSMOD
+  ruralmargSMOD0['RURAL'] <- 0
+  ruralmargSMOD1['RURAL'] <- 1
+  ruralmargSMOD0['Frequency'] <- ruralmargSMOD0$Urbanpop
+  ruralmargSMOD1['Frequency'] <- ruralmargSMOD1$Ruralpop
   
-  sum_indi <- sexmarg %>% group_by(GEOLEV1) %>% summarise(Population = sum(Frequency))
-  
-  ruralmargSMOD0 <- left_join(ruralmargSMOD0, sum_indi, by = 'GEOLEV1')
-  ruralmargSMOD0['New_freq'] <- ruralmargSMOD0$Urban_percent * ruralmargSMOD0$Population
-  
-  ruralmargSMOD1 <- left_join(ruralmargSMOD1, sum_indi, by = 'GEOLEV1')
-  ruralmargSMOD1['New_freq'] <- ruralmargSMOD1$Rural_percent * ruralmargSMOD1$Population
-  
-  ruralmargSMOD0 <- ruralmargSMOD0 %>% select(GEOLEV1, RURAL, Frequency, New_freq, Population)
-  ruralmargSMOD1 <- ruralmargSMOD1 %>% select(GEOLEV1, RURAL, Frequency, New_freq, Population)
   
   ruralmargSMOD <- rbind.data.frame(ruralmargSMOD0, ruralmargSMOD1)
+  
+  ruralmargSMOD <- ruralmargSMOD %>% select(GEOLEV1, RURAL, Frequency)
+  
+  ruralmargSMOD <- ruralmargSMOD[!is.na(ruralmargSMOD$GEOLEV1),]
+  
+  print(ruralmargSMOD)
+  
   
   
   
   # kan mis gaan als er een regio mist. 
   
-  for (row in 1:nrow(ruralmargSMOD)){
-    if (is.na(ruralmargSMOD$New_freq[row])){
-      print('error in rural marg, NAN value, GDL regions')
-      if (ruralmargSMOD$Frequency[row] == 0){
-        ruralmargSMOD$New_freq[row] <- 0
-      } else if (ruralmargSMOD$Frequency[row] > 0){
-        ruralmargSMOD$New_freq[row] <- ruralmargSMOD$Population[row]
-      }
-    }
-  }
-  
-  ruralmargSMOD <- ruralmargSMOD %>% select(GEOLEV1, RURAL, New_freq)
-  ruralmargSMOD <- ruralmargSMOD %>% rename('Frequency' = 'New_freq')
+
   
 }
 
@@ -4043,6 +4055,10 @@ jointhead100small[, PID := 1:.N]
 
 nr_individuals_per_regio <- c()
 nr_individuals_per_regio_GDL <- c()
+gdlcodes <- c()
+
+
+# 
 
 
 GDL_country <- GDL_pop[GDL_pop$liscountry == liscodeletters,]
@@ -4052,11 +4068,16 @@ GDL_country <- GDL_country[!is.na(GDL_country$region_number),]
 
 for (regnr in regionnumbers){
   
+  print(regnr)
   income_tib1reg <- income_tib[income_tib$GEOLEV1 == regnr,]
   income_tib1reg <- income_tib1reg %>% select(-GEOLEV1)
   
+  print(income_tib1reg)
+  
   rural_tib1reg <- rural_tib[rural_tib$GEOLEV1 == regnr,]
   rural_tib1reg <- rural_tib1reg %>% select(-GEOLEV1)
+  
+  print(rural_tib1reg)
   
   farm_tib1reg <- farm_tib[farm_tib$GEOLEV1 == regnr,]
   farm_tib1reg <- farm_tib1reg %>% select(-GEOLEV1)
@@ -4076,13 +4097,24 @@ for (regnr in regionnumbers){
   sex_tib1reg <- sex_tib[sex_tib$GEOLEV1 == regnr,]
   sex_tib1reg <- sex_tib1reg %>% select(-GEOLEV1)
   
-
   
-  group_control <- list(income_tib1reg, hhtype_tib1reg, hhsize_tib1reg)
-  individual_control <- list(rural_tib1reg, age_tib1reg, edu_tib1reg, sex_tib1reg)  
+  if (farm_presence == 0){
   
-  names(group_control) <- c('INCOME', 'HHTYPE', 'HHSIZECAT') 
-  names(individual_control) <- c('RURAL', 'AGECAT','EDUCAT', 'GENDER')
+    group_control <- list(hhtype_tib1reg, hhsize_tib1reg)
+    individual_control <- list(income_tib1reg, rural_tib1reg, age_tib1reg, edu_tib1reg, sex_tib1reg)  
+    
+    names(group_control) <- c('HHTYPE', 'HHSIZECAT') 
+    names(individual_control) <- c('INCOME', 'RURAL', 'AGECAT','EDUCAT', 'GENDER')
+  }
+  
+  if (farm_presence == 1){
+    
+    group_control <- list(hhtype_tib1reg, hhsize_tib1reg, farm_tib1reg)
+    individual_control <- list(income_tib1reg, rural_tib1reg, age_tib1reg, edu_tib1reg, sex_tib1reg)  
+    
+    names(group_control) <- c('HHTYPE', 'HHSIZECAT', 'FARMING') 
+    names(individual_control) <- c('INCOME', 'RURAL', 'AGECAT','EDUCAT', 'GENDER')
+  }
   
   ml_fitWEIGHTS <- jointhead100small$WEIGHTS
   
@@ -4100,7 +4132,7 @@ for (regnr in regionnumbers){
   )
   
   
-  fit <- ml_fit(ml_problem = fitting_problem, algorithm = "ipu", maxiter = 50) #was 50
+  fit <- ml_fit(ml_problem = fitting_problem, algorithm = "ipu", maxiter = 150) #was 50
   
   
   syn_pop_reg <- ml_replicate(fit, algorithm = "trs")
@@ -4110,18 +4142,18 @@ for (regnr in regionnumbers){
   
   regnrgdl = regnr
   
-  if (liscodeletters %ni% c('gr', 'be', 'ie', 'cn', 'in', 'it', 'jp')){
+  if (liscodeletters %ni% c('gr', 'be', 'ie', 'cn', 'in', 'it', 'jp', 'au')){
     
-    regnrgdl <- GDL_country[GDL_country$region_number == regnr,]$GDLCODE
+    regnrgdl <- GDL_country[GDL_country$region_number == regnr,]$GDLcode
     print(regnrgdl)
-    regnrgdl <- as.integer(substr(regnrgdl, 5,7))
-    print(regnrgdl)
+    #regnrgdl <- as.integer(substr(regnrgdl, 5,7))
+    #print(regnrgdl)
     
   }
   
   
   
-  name1 = paste0(isocode, '_nov23_synthpop_', as.character(regnrgdl))
+  name1 = paste0(isocode, '_LIS_synthpop_', as.character(regnrgdl))
   
   name = paste0(name1, '.dat')
   
@@ -4132,56 +4164,47 @@ for (regnr in regionnumbers){
   
   popsize_syn <- nrow(syn_pop_reg)
   
-  if (liscodeletters %ni% c('gr', 'be', 'ie', 'cn', 'in', 'it', 'jp')){
-    
-    GDL_region <- GDL_country[GDL_country$region_number == regnr,]
-  } else if (liscodeletters %in% c('gr', 'be', 'ie', 'cn', 'in', 'it', 'jp')){
-    
-    GDL_country_sum <- GDL_country %>% group_by(region_number) %>% summarise(year2015 = sum(year2015))
-    
-    GDL_region <- GDL_country_sum[GDL_country_sum$region_number == regnr,]
-  }
-  
-  popsize_GDL <- as.double(GDL_region$year2015) * 1000
-  
-  mp_syn_GDL <- popsize_GDL/popsize_syn
-  
-  maxHID <- max(syn_pop_reg$HID)
-  
-  if (mp_syn_GDL > 1.001){
-    extraHID <- sample(1:maxHID, round(maxHID*(mp_syn_GDL-1)), replace = TRUE)
-    
-    extraHIDdt <- syn_pop_reg[syn_pop_reg$HID %in% extraHID,]
-    extraHIDdt$HID <- extraHIDdt$HID + maxHID
-    
-    syn_pop_reg <- bind_rows(syn_pop_reg, extraHIDdt)
-    
-    popsize_syn_new <- nrow(syn_pop_reg)
-    
-  } 
-  
-  if (mp_syn_GDL < 0.999){
-    cancelHID <- sample(1:maxHID, round(maxHID*(1-mp_syn_GDL)))
-    
-    syn_pop_reg <- syn_pop_reg[syn_pop_reg$HID %ni% cancelHID,]
-  }
-  
-  
-  
   nr_individuals_per_regio <- append(nr_individuals_per_regio, nrow(syn_pop_reg))
+  
+  syn_pop_reg$HHSIZECAT <- as.integer(syn_pop_reg$HHSIZECAT)
+  syn_pop_reg$RURAL <- as.integer(syn_pop_reg$RURAL)
+  syn_pop_reg$GENDER <- as.integer(syn_pop_reg$GENDER)
+  syn_pop_reg$AGECAT <- as.integer(syn_pop_reg$AGECAT)
+  syn_pop_reg$EDUCAT <- as.integer(syn_pop_reg$EDUCAT)
+  syn_pop_reg$FARMING <- as.integer(syn_pop_reg$FARMING)
+  syn_pop_reg$INCOME <- as.integer(syn_pop_reg$INCOME)
+  syn_pop_reg$HID <- as.integer(syn_pop_reg$HID)
+  syn_pop_reg$RELATE <- as.integer(syn_pop_reg$RELATE)
+  syn_pop_reg$HHTYPE <- as.integer(syn_pop_reg$HHTYPE)
+  
+  if (farm_presence == 0){
+    syn_pop_reg$FARMING <- -1
+    syn_pop_reg$FARMING <- as.integer(syn_pop_reg$FARMING)
+  }
+  
+  syn_pop_reg$WEALTH <- -1
+  syn_pop_reg$FLOORCAT <- -1
+  syn_pop_reg$WALLCAT <- -1
+  syn_pop_reg$ROOFCAT <- -1
+  syn_pop_reg$SOURCE <- 1
+  
+  syn_pop_reg$WEALTH <- as.integer(syn_pop_reg$WEALTH)
+  syn_pop_reg$FLOORCAT <- as.integer(syn_pop_reg$FLOORCAT)
+  syn_pop_reg$WALLCAT <- as.integer(syn_pop_reg$WALLCAT)
+  syn_pop_reg$ROOFCAT <- as.integer(syn_pop_reg$ROOFCAT)
+  syn_pop_reg$SOURCE <- as.integer(syn_pop_reg$SOURCE)
   
   con = file(name, "wb")
   
-  writeBin(c(syn_pop_reg$INCOME, syn_pop_reg$RURAL, syn_pop_reg$FARMING, syn_pop_reg$AGECAT, syn_pop_reg$GENDER, 
-             syn_pop_reg$EDUCAT, syn_pop_reg$HHTYPE, syn_pop_reg$HID, syn_pop_reg$RELATE, syn_pop_reg$HHSIZECAT, syn_pop_reg$GEOLEV1), con)
+  writeBin(c(syn_pop_reg$HID, syn_pop_reg$RELATE, syn_pop_reg$INCOME, syn_pop_reg$WEALTH, syn_pop_reg$RURAL, syn_pop_reg$AGECAT, syn_pop_reg$GENDER, 
+        syn_pop_reg$EDUCAT, syn_pop_reg$HHTYPE, syn_pop_reg$HHSIZECAT, syn_pop_reg$FARMING, syn_pop_reg$FLOORCAT, syn_pop_reg$WALLCAT, syn_pop_reg$ROOFCAT, syn_pop_reg$SOURCE), con)
   
   
   
   close(con)
   
-
-  if (liscodeletters %in% c('gr', 'be', 'ie', 'cn', 'in', 'it', 'jp')){
-    gdlcodes <- c()
+  
+  if (liscodeletters %in% c('gr', 'be', 'ie', 'cn', 'in', 'it', 'jp', 'au')){
     GDL_pop_country <- GDL_pop[GDL_pop$liscountry == liscodeletters,] 
     print(GDL_pop_country)
     GDL_pop_country <- GDL_pop_country[!is.na(GDL_pop_country$region_number),]
@@ -4193,11 +4216,11 @@ for (regnr in regionnumbers){
       # opnieuw fitten: 
       
       print(gdlcode)
-      # scale marginals to gdl regions population size
+      # scale marginals to gdl regions population size. let op year2015. 
       
       GDL_pop_GDLreg <- GDL_pop_country[GDL_pop_country$GDLcode == gdlcode,]
       
-      mp_syn_GDL <- GDL_pop_GDLreg$year2015/(sum(GDL_pop_country_regnr$year2015))
+      mp_syn_GDL <- GDL_pop_GDLreg$Population/(sum(GDL_pop_country_regnr$Population))
       
       income_tib_gdl <- income_tib[income_tib$GEOLEV1 == regnr,]
       income_tib_gdl$Frequency <- income_tib_gdl$Frequency * mp_syn_GDL
@@ -4223,23 +4246,41 @@ for (regnr in regionnumbers){
       edu_tib_gdl$Frequency <- edu_tib_gdl$Frequency * mp_syn_GDL
       edu_tib_gdl <- edu_tib_gdl %>% select(-GEOLEV1)
       
+      farm_tib_gdl <- farm_tib[farm_tib$GEOLEV1 == regnr,]
+      farm_tib_gdl$Frequency <- farm_tib_gdl$Frequency * mp_syn_GDL
+      farm_tib_gdl <- farm_tib_gdl %>% select(-GEOLEV1)
       
-      GDL_SMOD <- read.csv('fix_regions_griebe.csv', sep = ';', header = TRUE)
-      GDL_SMOD['Rural_pop'] <- GDL_SMOD['year2015'] * GDL_SMOD['Rural_percent'] * 1000
-      GDL_SMOD['Urban_pop'] <- GDL_SMOD['year2015'] * GDL_SMOD['Urban_percent'] * 1000
       
-      rural_marg_gdl <- GDL_SMOD[GDL_SMOD$GDLCODE == gdlcode,]
+      GDL_SMOD <- read.csv('fix_regions_griebe.csv', sep = ',', header = TRUE)
+      GDL_SMOD['Rural_pop'] <- GDL_SMOD['Totalpop'] * GDL_SMOD['Rural_percent']
+      GDL_SMOD['Urban_pop'] <- GDL_SMOD['Totalpop'] * GDL_SMOD['Urban_percent']
+      
+      rural_marg_gdl <- GDL_SMOD[GDL_SMOD$GDLcode == gdlcode,]
       rural_tib_gdl <- data.frame('RURAL' = c(0,1), 'Frequency' = c(rural_marg_gdl$Urban_pop, rural_marg_gdl$Rural_pop))
       rural_tib_gdl$RURAL <- as.integer(rural_tib_gdl$RURAL)
       rural_tib_gdl <- as_tibble(rural_tib_gdl)
       
+      if (farm_presence == 0){
+      
+        group_control <- list(hhtype_tib_gdl, hhsize_tib_gdl)
+        individual_control <- list(income_tib_gdl, rural_tib_gdl, age_tib_gdl, edu_tib_gdl, sex_tib_gdl) 
+        
+        names(group_control) <- c('HHTYPE', 'HHSIZECAT') 
+        names(individual_control) <- c('INCOME', 'RURAL', 'AGECAT','EDUCAT', 'GENDER')
+      }
+      
+      if (farm_presence == 1){
+        
+        group_control <- list(hhtype_tib_gdl, hhsize_tib_gdl, farm_tib_gdl)
+        individual_control <- list(income_tib_gdl, rural_tib_gdl, age_tib_gdl, edu_tib_gdl, sex_tib_gdl) 
+        
+        names(group_control) <- c('HHTYPE', 'HHSIZECAT', 'FARMING') 
+        names(individual_control) <- c('INCOME', 'RURAL', 'AGECAT','EDUCAT', 'GENDER')
+      }
       
       
-      group_control <- list(income_tib_gdl, hhtype_tib_gdl, hhsize_tib_gdl)
-      individual_control <- list(rural_tib_gdl, age_tib_gdl, edu_tib_gdl, sex_tib_gdl) 
       
-      names(group_control) <- c('INCOME', 'HHTYPE', 'HHSIZECAT') 
-      names(individual_control) <- c('RURAL', 'AGECAT','EDUCAT', 'GENDER')
+      
       
       ml_fitWEIGHTS <- jointhead100small$WEIGHTS
       
@@ -4257,7 +4298,7 @@ for (regnr in regionnumbers){
       )
       
       
-      fit <- ml_fit(ml_problem = fitting_problem, algorithm = "ipu", maxiter = 50) #was 50
+      fit <- ml_fit(ml_problem = fitting_problem, algorithm = "ipu", maxiter = 150) #was 50
       
       
       syn_pop_reg_gdl <- ml_replicate(fit, algorithm = "trs")
@@ -4266,7 +4307,7 @@ for (regnr in regionnumbers){
       gc()
       
       popsize_syn <- nrow(syn_pop_reg_gdl)
-      popsize_GDL <- as.double(GDL_pop_GDLreg$year2015) * 1000
+      popsize_GDL <- as.double(GDL_pop_GDLreg$Population)
       
       mp_syn_GDL <- popsize_GDL/popsize_syn
       
@@ -4295,24 +4336,54 @@ for (regnr in regionnumbers){
       print('syn_pop_reg_gdl')
       print(nrow(syn_pop_reg_gdl))
       
-      name_regGDL <- paste0(isocode, '_nov23_synthpop_gdl', as.character(gdlcode), '.dat') #gdl was reg. 
+      name_regGDL <- paste0(isocode, '_LIS_synthpop_', as.character(gdlcode), '.dat') #gdl was reg. 
       
-      #con = file(name_regGDL, "wb")
+      if (farm_presence == 0){
+        syn_pop_reg_gdl$FARMING <- -1
+      }
       
-      #writeBin(c(syn_pop_reg_gdl$INCOME, syn_pop_reg_gdl$RURAL, syn_pop_reg_gdl$FARMING, syn_pop_reg_gdl$AGECAT, syn_pop_reg_gdl$GENDER, 
-      #           syn_pop_reg_gdl$EDUCAT, syn_pop_reg_gdl$HHTYPE, syn_pop_reg_gdl$HID, syn_pop_reg_gdl$RELATE, syn_pop_reg_gdl$HHSIZECAT, syn_pop_reg_gdl$GEOLEV1), con)
+      syn_pop_reg_gdl$HHSIZECAT <- as.integer(syn_pop_reg_gdl$HHSIZECAT)
+      syn_pop_reg_gdl$RURAL <- as.integer(syn_pop_reg_gdl$RURAL)
+      syn_pop_reg_gdl$GENDER <- as.integer(syn_pop_reg_gdl$GENDER)
+      syn_pop_reg_gdl$AGECAT <- as.integer(syn_pop_reg_gdl$AGECAT)
+      syn_pop_reg_gdl$EDUCAT <- as.integer(syn_pop_reg_gdl$EDUCAT)
+      syn_pop_reg_gdl$FARMING <- as.integer(syn_pop_reg_gdl$FARMING)
+      syn_pop_reg_gdl$INCOME <- as.integer(syn_pop_reg_gdl$INCOME)
+      syn_pop_reg_gdl$HID <- as.integer(syn_pop_reg_gdl$HID)
+      syn_pop_reg_gdl$RELATE <- as.integer(syn_pop_reg_gdl$RELATE)
+      syn_pop_reg_gdl$HHTYPE <- as.integer(syn_pop_reg_gdl$HHTYPE)
       
-      #writeBin(c(syn_pop$INCOME, syn_pop$PID), con)
+      syn_pop_reg_gdl$WEALTH <- -1
+      syn_pop_reg_gdl$FLOORCAT <- -1
+      syn_pop_reg_gdl$WALLCAT <- -1
+      syn_pop_reg_gdl$ROOFCAT <- -1
+      syn_pop_reg_gdl$SOURCE <- 1
+      
+      syn_pop_reg_gdl$WEALTH <- as.integer(syn_pop_reg_gdl$WEALTH)
+      syn_pop_reg_gdl$FLOORCAT <- as.integer(syn_pop_reg_gdl$FLOORCAT)
+      syn_pop_reg_gdl$WALLCAT <- as.integer(syn_pop_reg_gdl$WALLCAT)
+      syn_pop_reg_gdl$ROOFCAT <- as.integer(syn_pop_reg_gdl$ROOFCAT)
+      syn_pop_reg_gdl$SOURCE <- as.integer(syn_pop_reg_gdl$SOURCE)
       
       
-      #close(con)
+      
+      
+      
+      con = file(name_regGDL, "wb")
+      
+      writeBin(c(syn_pop_reg_gdl$HID, syn_pop_reg_gdl$RELATE, syn_pop_reg_gdl$INCOME, syn_pop_reg_gdl$WEALTH, syn_pop_reg_gdl$RURAL, 
+                 syn_pop_reg_gdl$AGECAT, syn_pop_reg_gdl$GENDER, syn_pop_reg_gdl$EDUCAT, syn_pop_reg_gdl$HHTYPE, syn_pop_reg_gdl$HHSIZECAT, 
+                 syn_pop_reg_gdl$FARMING, syn_pop_reg_gdl$FLOORCAT, syn_pop_reg_gdl$WALLCAT, syn_pop_reg_gdl$ROOFCAT, syn_pop_reg_gdl$SOURCE), con)
+      
+      
+      close(con)
     }
-  
+    
   }
-
-
   
-
+  
+  
+  
   
   syn_pop <- rbindlist(list(syn_pop, syn_pop_reg), use.names=TRUE)
   rm(syn_pop_reg)
@@ -4326,16 +4397,20 @@ for (regnr in regionnumbers){
 DF_nr_individuals_per_region <- data.frame('Country' = rep(isocode, length(regionnumbers)), 'GEOLEV1' = regionnumbers, 'Nr_individuals' = nr_individuals_per_regio)
 
 
-if (liscodeletters %in% c('gr', 'be', 'ie', 'cn', 'in', 'it', 'jp')){
+if (liscodeletters %in% c('gr', 'be', 'ie', 'cn', 'in', 'it', 'jp', 'au')){
+  print(rep(isocode, length(gdlcodes)))
+  print(gdlcodes)
+  print(nr_individuals_per_regio_GDL)
+  
   DF_nr_individuals_per_region_GDL <- data.frame('Country' = rep(isocode, length(gdlcodes)), 'GDLCODE' <- gdlcodes, 'Nr_individuals' <- nr_individuals_per_regio_GDL)
-  filename_indiperregionGDL <- paste0("GDL_individuals_per_region_nov23_", isocode, ".csv")
-  write.csv(DF_nr_individuals_per_region_GDL, filename_indiperregionGDL, row.names = FALSE)
+  filename_indiperregionGDL <- paste0("GDL_individuals_per_region_", isocode, ".csv")
+  write.table(DF_nr_individuals_per_region_GDL, filename_indiperregionGDL, row.names = FALSE, sep = ',')
 }
-  
-  
 
-filename_indiperregion <- paste0("Individuals_per_region_nov23_", isocode, ".csv")
-write.csv(DF_nr_individuals_per_region, filename_indiperregion, row.names = FALSE)
+
+
+filename_indiperregion <- paste0("Individuals_per_region_", isocode, ".csv")
+write.table(DF_nr_individuals_per_region, filename_indiperregion, row.names = FALSE, sep = ',')
 
 
 
@@ -4515,8 +4590,8 @@ syn_pophead <- syn_pop[syn_pop$RELATE == 1,]
 gc()
 
 remove_rural_combi <- function(){
-
-
+  
+  
   combi1 <- data.frame(xtabs(~ RURAL + HHTYPE + GEOLEV1, data = syn_pophead)/nrow(syn_pophead))
   combi1 <- left_join(combi1, ruralmarg1, by = c('RURAL', 'GEOLEV1'))
   combi1 <- left_join(combi1, hhtypemarg1, by = c('HHTYPE', 'GEOLEV1'))
@@ -4594,7 +4669,7 @@ combi9[is.na(combi9)] <- 0
 combi9$Marg_freq <- combi9$Marg_freq / sum(combi9$Marg_freq)
 
 gc()
-combi10 <- data.frame(xtabs(~ FARMING + INCOME + GEOLEV1, data = syn_pophead)/nrow(syn_pophead))
+combi10 <- data.frame(xtabs(~ FARMING + INCOME + GEOLEV1, data = syn_pop)/nrow(syn_pop))
 combi10 <- left_join(combi10, farmmarg1, by = c('FARMING', 'GEOLEV1'))
 combi10 <- left_join(combi10, incomemarg1, by = c('INCOME', 'GEOLEV1'))
 combi10$Marg_freq <- combi10$Prob_FARMING * combi10$Prob_INCOME
@@ -4627,7 +4702,7 @@ combi13[is.na(combi13)] <- 0
 combi13$Marg_freq <- combi13$Marg_freq / sum(combi13$Marg_freq)
 
 gc()
-combi14 <- data.frame(xtabs(~ INCOME + HHTYPE + GEOLEV1, data = syn_pophead)/nrow(syn_pophead))
+combi14 <- data.frame(xtabs(~ INCOME + HHTYPE + GEOLEV1, data = syn_pop)/nrow(syn_pop))
 combi14 <- left_join(combi14, incomemarg1, by = c('INCOME', 'GEOLEV1'))
 combi14 <- left_join(combi14, hhtypemarg1, by = c('HHTYPE', 'GEOLEV1'))
 combi14$Marg_freq <- combi14$Prob_INCOME * combi14$Prob_HHTYPE
@@ -4635,7 +4710,7 @@ combi14[is.na(combi14)] <- 0
 combi14$Marg_freq <- combi14$Marg_freq / sum(combi14$Marg_freq)
 
 gc()
-combi15 <- data.frame(xtabs(~ INCOME + HHSIZECAT + GEOLEV1, data = syn_pophead)/nrow(syn_pophead))
+combi15 <- data.frame(xtabs(~ INCOME + HHSIZECAT + GEOLEV1, data = syn_pop)/nrow(syn_pop))
 combi15 <- left_join(combi15, incomemarg1, by = c('INCOME', 'GEOLEV1'))
 combi15 <- left_join(combi15, hhsizemarg1, by = c('HHSIZECAT', 'GEOLEV1'))
 combi15$Marg_freq <- combi15$Prob_INCOME * combi15$Prob_HHSIZECAT
@@ -4824,10 +4899,10 @@ if ((check_sums_survey - check_sums_national) + (check_sums_synth - check_sums_m
 
 
 
-filename_dferrors <- paste0("synth_errors_LIS_nov23_", isocode, ".csv")
+filename_dferrors <- paste0("synth_errors_LIS_", isocode, ".csv")
 
 
-write.csv(DF_errors, filename_dferrors, row.names = FALSE)
+write.table(DF_errors, filename_dferrors, row.names = FALSE, sep = ',')
 
 print('saved errors')
 
