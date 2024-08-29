@@ -4,14 +4,7 @@ args = commandArgs(trailingOnly=TRUE)
 
 isocode = as.character(args[1])
 
-uselisdata = as.character(args[2])
-
-
-if (uselisdata != 'yes' || uselisdata != 'no'){
-  
-  print(uselisdata)
-}
-
+uselisdata = 'yes'
 
 
 library(dplyr)
