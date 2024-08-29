@@ -33,7 +33,7 @@ population['Urban_percent'] <- population$Urbanpop/population$Population
 population['Rural_percent'] <- population$Ruralpop/population$Population
 
 
-dhsfilenames <- read.csv('dhsdatafiles.csv', sep = ';')
+dhsfilenames <- read.csv('DHSdatafiles.csv', sep = ';')
 
 trs_frequency <- function(df){  
   
