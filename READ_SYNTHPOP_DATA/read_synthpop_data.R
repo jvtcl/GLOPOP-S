@@ -1,6 +1,7 @@
 library(R.utils)
 library(Rcpp)
 
+# Data available on  https://doi.org/10.7910/DVN/KJC3RH
 
 gdlcode = '' #example: 'AFGr101' see Nr_individuals_data_availability.csv
 
