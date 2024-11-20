@@ -8,13 +8,15 @@ Created on Mon Dec 18 17:32:30 2023
 import numpy as np
 import pandas as pd
 import gzip
+import os
 import sys
 
 # Data available on  https://doi.org/10.7910/DVN/KJC3RH
 
 # Filename .dat file.
 gdlcode = sys.argv[1] # example AFGr101. For all gdlcodes see Nr_individuals_data_availability.csv
-filename = f"synthpop_{gdlcode}'.dat.gz" 
+data_path <- sys.argv[2]
+filename = os.path.join(data_path, f"synthpop_{gdlcode}'.dat.gz")
 
 with gzip.open(filename, 'rb') as f:
     # Read the binary content of the file
@@ -32,7 +34,7 @@ attribute_names = ['HID', 'RELATE_HEAD', 'INCOME', 'WEALTH', 'RURAL', 'AGE', 'GE
                    'HHTYPE', 'HHSIZE_CAT','AGRI_OWNERSHIP', 'FLOOR', 'WALL', 'ROOF', 'SOURCE']
 
 df = pd.DataFrame(data_reshaped, columns=attribute_names)
-df.to_csv(f"synthpop_{gdlcode}.csv.gz")
+df.to_csv(os.path.join(data_path, f"synthpop_{gdlcode}.csv.gz"))
 
 # column names explained:
 # HID: household ID. Be aware that household ID's are unique within a region, not within a country. 
