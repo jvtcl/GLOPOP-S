@@ -16,7 +16,8 @@ filename <- paste(data_path, paste0('synthpop_', gdlcode, '.dat.gz'), sep = "/")
 
 
 # import file with nr of individuals per region
-filename_indi <- paste(here(), paste0('Nr_individuals_data_availability.csv'), sep = "/")
+glos_path <- paste(here(), "GLOPOP-S", sep = "/")
+filename_indi <- paste(glos_path, "DATA", 'Nr_individuals_data_availability.csv', sep = "/")
 
 individuals_per_region <- read.csv(filename_indi, sep = ',', header = TRUE) 
 
