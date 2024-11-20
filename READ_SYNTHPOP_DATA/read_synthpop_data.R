@@ -1,4 +1,5 @@
 library(data.table)
+library(here)
 library(R.utils)
 library(Rcpp)
 
@@ -15,7 +16,7 @@ filename <- paste(data_path, paste0('synthpop_', gdlcode, '.dat.gz'), sep = "/")
 
 
 # import file with nr of individuals per region
-filename_indi <- paste0('Nr_individuals_data_availability.csv')
+filename_indi <- paste(here(), paste0('Nr_individuals_data_availability.csv'), sep = "/")
 
 individuals_per_region <- read.csv(filename_indi, sep = ',', header = TRUE) 
 
