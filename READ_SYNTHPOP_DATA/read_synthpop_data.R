@@ -6,8 +6,8 @@ library(Rcpp)
 
 args <- commandArgs(trailingOnly=TRUE)
 gdlcode = args[1] #example: 'AFGr101' see Nr_individuals_data_availability.csv
-
-filename <- paste0('synthpop_', gdlcode, '.dat.gz')
+data_path <- args[2]
+filename <- paste(data_path, paste0('synthpop_', gdlcode, '.dat.gz'), sep = "/")
 
 
 # Be aware:  
@@ -38,7 +38,7 @@ bindata <- as.data.frame(bindata)
 colnames(bindata) <- c('HID', 'RELATE_HEAD', 'INCOME', 'WEALTH', 'RURAL', 'AGE', 'GENDER', 
                          'EDUC', 'HHTYPE', 'HHSIZE_CAT','AGRI_OWNERSHIP', 'FLOOR', 'WALL', 'ROOF', 'SOURCE')
 
-data.table::fwrite(bindata, paste0("synthpop_", gdlcode, ".csv.gz"))
+data.table::fwrite(bindata, paste(data_path, paste0("synthpop_", gdlcode, ".csv.gz"), sep = "/"))
 
 # column names explained:
 # HID: household ID. Be aware that household ID's are unique within a region, not within a country. 
