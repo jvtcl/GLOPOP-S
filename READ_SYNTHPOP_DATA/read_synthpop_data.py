@@ -16,7 +16,7 @@ import sys
 # Filename .dat file.
 gdlcode = sys.argv[1] # example AFGr101. For all gdlcodes see Nr_individuals_data_availability.csv
 data_path = sys.argv[2]
-filename = os.path.join(data_path, f"synthpop_{gdlcode}'.dat.gz")
+filename = os.path.join(data_path, f"synthpop_{gdlcode}.dat.gz")
 
 with gzip.open(filename, 'rb') as f:
     # Read the binary content of the file
