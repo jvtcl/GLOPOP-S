@@ -34,7 +34,6 @@ attribute_names = ['HID', 'RELATE_HEAD', 'INCOME', 'WEALTH', 'RURAL', 'AGE', 'GE
                    'HHTYPE', 'HHSIZE_CAT','AGRI_OWNERSHIP', 'FLOOR', 'WALL', 'ROOF', 'SOURCE']
 
 df = pd.DataFrame(data_reshaped, columns=attribute_names).set_index("HID")
-print(f"df (in GLOPOP-S, before dump) : {df}\n")
 df.to_parquet(os.path.join(data_path, f"synthpop_{gdlcode}.parquet"), compression="zstd")
 
 # column names explained:
