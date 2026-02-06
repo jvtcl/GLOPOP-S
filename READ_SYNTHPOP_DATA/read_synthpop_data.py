@@ -34,7 +34,7 @@ attribute_names = ['HID', 'RELATE_HEAD', 'INCOME', 'WEALTH', 'RURAL', 'AGE', 'GE
                    'HHTYPE', 'HHSIZE_CAT','AGRI_OWNERSHIP', 'FLOOR', 'WALL', 'ROOF', 'SOURCE']
 
 df = pd.DataFrame(data_reshaped, columns=attribute_names)
-df.to_csv(os.path.join(data_path, f"synthpop_{gdlcode}.csv.gz"))
+df.to_parquet(os.path.join(data_path, f"synthpop_{gdlcode}.parquet"), compression="zstd")
 
 # column names explained:
 # HID: household ID. Be aware that household ID's are unique within a region, not within a country. 
