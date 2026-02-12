@@ -50,7 +50,7 @@ attribute_names = [
     "SOURCE",
 ]
 
-df = pd.DataFrame(data_reshaped, columns=attribute_names).set_index("HID")
+df = pd.DataFrame(data_reshaped, columns=attribute_names)
 df.to_parquet(
     os.path.join(data_path, f"synthpop_{gdlcode}.parquet"), compression="zstd"
 )
